@@ -83,7 +83,7 @@
 
 ;; @@
 ;; =>
-;;; {"type":"list-like","open":"","close":"","separator":"</pre><pre>","items":[{"type":"list-like","open":"","close":"","separator":"</pre><pre>","items":[{"type":"list-like","open":"","close":"","separator":"</pre><pre>","items":[{"type":"list-like","open":"","close":"","separator":"</pre><pre>","items":[{"type":"html","content":"<span class='clj-var'>#&#x27;party-or-not/posterior-estimate</span>","value":"#'party-or-not/posterior-estimate"},{"type":"html","content":"<span class='clj-var'>#&#x27;party-or-not/N</span>","value":"#'party-or-not/N"}],"value":"[#'party-or-not/posterior-estimate,#'party-or-not/N]"},{"type":"list-like","open":"<span class='clj-map'>{</span>","close":"<span class='clj-map'>}</span>","separator":", ","items":[{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:norain</span>","value":":norain"},{"type":"html","content":"<span class='clj-double'>0.39699999999998276</span>","value":"0.39699999999998276"}],"value":"[:norain 0.39699999999998276]"},{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:rain</span>","value":":rain"},{"type":"html","content":"<span class='clj-double'>0.6029999999999601</span>","value":"0.6029999999999601"}],"value":"[:rain 0.6029999999999601]"}],"value":"{:norain 0.39699999999998276, :rain 0.6029999999999601}"}],"value":"[[#'party-or-not/posterior-estimate,#'party-or-not/N],{:norain 0.39699999999998276, :rain 0.6029999999999601}]"},{"type":"html","content":"<span class='clj-var'>#&#x27;party-or-not/expected-utility-of-action</span>","value":"#'party-or-not/expected-utility-of-action"}],"value":"[[[#'party-or-not/posterior-estimate,#'party-or-not/N],{:norain 0.39699999999998276, :rain 0.6029999999999601}],#'party-or-not/expected-utility-of-action]"},{"type":"html","content":"<span class='clj-double'>19.599999999999167</span>","value":"19.599999999999167"}],"value":"[[[[#'party-or-not/posterior-estimate,#'party-or-not/N],{:norain 0.39699999999998276, :rain 0.6029999999999601}],#'party-or-not/expected-utility-of-action],19.599999999999167]"}
+;;; {"type":"list-like","open":"","close":"","separator":"</pre><pre>","items":[{"type":"list-like","open":"","close":"","separator":"</pre><pre>","items":[{"type":"list-like","open":"","close":"","separator":"</pre><pre>","items":[{"type":"list-like","open":"","close":"","separator":"</pre><pre>","items":[{"type":"html","content":"<span class='clj-var'>#&#x27;party-or-not/posterior-estimate</span>","value":"#'party-or-not/posterior-estimate"},{"type":"html","content":"<span class='clj-var'>#&#x27;party-or-not/N</span>","value":"#'party-or-not/N"}],"value":"[#'party-or-not/posterior-estimate,#'party-or-not/N]"},{"type":"list-like","open":"<span class='clj-map'>{</span>","close":"<span class='clj-map'>}</span>","separator":", ","items":[{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:rain</span>","value":":rain"},{"type":"html","content":"<span class='clj-double'>0.5921999999999613</span>","value":"0.5921999999999613"}],"value":"[:rain 0.5921999999999613]"},{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:norain</span>","value":":norain"},{"type":"html","content":"<span class='clj-double'>0.40779999999998157</span>","value":"0.40779999999998157"}],"value":"[:norain 0.40779999999998157]"}],"value":"{:rain 0.5921999999999613, :norain 0.40779999999998157}"}],"value":"[[#'party-or-not/posterior-estimate,#'party-or-not/N],{:rain 0.5921999999999613, :norain 0.40779999999998157}]"},{"type":"html","content":"<span class='clj-var'>#&#x27;party-or-not/expected-utility-of-action</span>","value":"#'party-or-not/expected-utility-of-action"}],"value":"[[[#'party-or-not/posterior-estimate,#'party-or-not/N],{:rain 0.5921999999999613, :norain 0.40779999999998157}],#'party-or-not/expected-utility-of-action]"},{"type":"html","content":"<span class='clj-double'>20.049999999999116</span>","value":"20.049999999999116"}],"value":"[[[[#'party-or-not/posterior-estimate,#'party-or-not/N],{:rain 0.5921999999999613, :norain 0.40779999999998157}],#'party-or-not/expected-utility-of-action],20.049999999999116]"}
 ;; <=
 
 ;; @@
@@ -106,23 +106,33 @@
 (key (apply max-key val {:a 3 :b 7 :c 9}))
 ;; @@
 ;; =>
-;;; {"type":"list-like","open":"","close":"","separator":"</pre><pre>","items":[{"type":"list-like","open":"","close":"","separator":"</pre><pre>","items":[{"type":"list-like","open":"","close":"","separator":"</pre><pre>","items":[{"type":"html","content":"<span class='clj-var'>#&#x27;party-or-not/expected-utility</span>","value":"#'party-or-not/expected-utility"},{"type":"list-like","open":"<span class='clj-map'>{</span>","close":"<span class='clj-map'>}</span>","separator":", ","items":[{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:doParty</span>","value":":doParty"},{"type":"html","content":"<span class='clj-double'>139.6399999999952</span>","value":"139.6399999999952"}],"value":"[:doParty 139.6399999999952]"},{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:dontParty</span>","value":":dontParty"},{"type":"html","content":"<span class='clj-double'>19.969999999999125</span>","value":"19.969999999999125"}],"value":"[:dontParty 19.969999999999125]"}],"value":"{:doParty 139.6399999999952, :dontParty 19.969999999999125}"}],"value":"[#'party-or-not/expected-utility,{:doParty 139.6399999999952, :dontParty 19.969999999999125}]"},{"type":"html","content":"<span class='clj-keyword'>:doParty</span>","value":":doParty"}],"value":"[[#'party-or-not/expected-utility,{:doParty 139.6399999999952, :dontParty 19.969999999999125}],:doParty]"},{"type":"html","content":"<span class='clj-keyword'>:c</span>","value":":c"}],"value":"[[[#'party-or-not/expected-utility,{:doParty 139.6399999999952, :dontParty 19.969999999999125}],:doParty],:c]"}
+;;; {"type":"list-like","open":"","close":"","separator":"</pre><pre>","items":[{"type":"list-like","open":"","close":"","separator":"</pre><pre>","items":[{"type":"list-like","open":"","close":"","separator":"</pre><pre>","items":[{"type":"html","content":"<span class='clj-var'>#&#x27;party-or-not/expected-utility</span>","value":"#'party-or-not/expected-utility"},{"type":"list-like","open":"<span class='clj-map'>{</span>","close":"<span class='clj-map'>}</span>","separator":", ","items":[{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:doParty</span>","value":":doParty"},{"type":"html","content":"<span class='clj-double'>141.31999999999502</span>","value":"141.31999999999502"}],"value":"[:doParty 141.31999999999502]"},{"type":"list-like","open":"","close":"","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:dontParty</span>","value":":dontParty"},{"type":"html","content":"<span class='clj-double'>20.109999999999108</span>","value":"20.109999999999108"}],"value":"[:dontParty 20.109999999999108]"}],"value":"{:doParty 141.31999999999502, :dontParty 20.109999999999108}"}],"value":"[#'party-or-not/expected-utility,{:doParty 141.31999999999502, :dontParty 20.109999999999108}]"},{"type":"html","content":"<span class='clj-keyword'>:doParty</span>","value":":doParty"}],"value":"[[#'party-or-not/expected-utility,{:doParty 141.31999999999502, :dontParty 20.109999999999108}],:doParty]"},{"type":"html","content":"<span class='clj-keyword'>:c</span>","value":":c"}],"value":"[[[#'party-or-not/expected-utility,{:doParty 141.31999999999502, :dontParty 20.109999999999108}],:doParty],:c]"}
 ;; <=
 
 ;; @@
 (defn make-rational-policy 
-  [actions 
-   expected-utility-estimator]
-  (let [expected-utility (set (expected-utility N [:doParty :dontParty])) ])
-	(key (apply max-key val (set( expected-utility N [:doParty :dontParty]) )))   
-      )
-(make-rational-policy [:doParty :dontParty] 
-                      #(expected-utility N %1 ))
+  [N actions]
+  (let [expected ( expected-utility N actions)]
+    (key (apply max-key val(set expected)))
+   
+   ))
+
+(make-rational-policy N [:doParty :dontParty] )
+(set( expected-utility N [:doParty :dontParty]))
+
 ;; @@
 ;; =>
-;;; {"type":"list-like","open":"","close":"","separator":"</pre><pre>","items":[{"type":"html","content":"<span class='clj-var'>#&#x27;party-or-not/make-rational-policy</span>","value":"#'party-or-not/make-rational-policy"},{"type":"html","content":"<span class='clj-keyword'>:doParty</span>","value":":doParty"}],"value":"[#'party-or-not/make-rational-policy,:doParty]"}
+;;; {"type":"list-like","open":"","close":"","separator":"</pre><pre>","items":[{"type":"list-like","open":"","close":"","separator":"</pre><pre>","items":[{"type":"html","content":"<span class='clj-var'>#&#x27;party-or-not/make-rational-policy</span>","value":"#'party-or-not/make-rational-policy"},{"type":"html","content":"<span class='clj-keyword'>:doParty</span>","value":":doParty"}],"value":"[#'party-or-not/make-rational-policy,:doParty]"},{"type":"list-like","open":"<span class='clj-set'>#{</span>","close":"<span class='clj-set'>}</span>","separator":" ","items":[{"type":"list-like","open":"<span class='clj-vector'>[</span>","close":"<span class='clj-vector'>]</span>","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:dontParty</span>","value":":dontParty"},{"type":"html","content":"<span class='clj-double'>19.789999999999143</span>","value":"19.789999999999143"}],"value":"[:dontParty 19.789999999999143]"},{"type":"list-like","open":"<span class='clj-vector'>[</span>","close":"<span class='clj-vector'>]</span>","separator":" ","items":[{"type":"html","content":"<span class='clj-keyword'>:doParty</span>","value":":doParty"},{"type":"html","content":"<span class='clj-double'>137.47999999999544</span>","value":"137.47999999999544"}],"value":"[:doParty 137.47999999999544]"}],"value":"#{[:dontParty 19.789999999999143] [:doParty 137.47999999999544]}"}],"value":"[[#'party-or-not/make-rational-policy,:doParty],#{[:dontParty 19.789999999999143] [:doParty 137.47999999999544]}]"}
 ;; <=
 
 ;; @@
-)
+
+;; @@
+
+;; @@
+
+;; @@
+
+;; @@
+
 ;; @@
