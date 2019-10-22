@@ -1,0 +1,49 @@
+using Gen
+
+@gen function burglar_model(alarm::Bool, radio::Bool )
+	earthquake =  @trace( bernoulli(0.1), :earthquake)
+
+	if( alarm == 1 && radio == 0)
+		burglar =  @trace( bernoulli(.95), :burglar)
+	elseif(alarm == 1 && radio == 1)
+		burglar =  @trace( bernoulli(0.2), :burglar)
+		elseif(alarm == 0 || radio == 0)
+			burglar = @trace( bernoulli(0.2), :burglar)
+	end
+
+	if(earthquake == 1)
+		radioDist = @trace( bernoulli(0.8), :radioDist)
+	else
+		radioDist = @trace( bernoulli(0.2), :radioDist)
+	end
+
+	if(burglar == 1 && earthquake == 1)
+		alarmDist = @trace( bernoulli(0.99), :alarmDist)
+	elseif(burglar == 0 && earthquake == 0)
+		alarmDist = @trace( bernoulli(0.0001), :alarmDist)
+	else
+		alarmDist = @trace( bernoulli(0.99), :alarmDist)
+	end
+
+end
+
+function my_inference_program(num_iters::Int)
+
+    # Run the model, constrained by `constraints`,
+    # to get an initial execution trace
+    (trace, _) = generate(burglar_model, (1, 0))
+
+    # Iteratively update the slope then the intercept,
+    # using Gen's metropolis_hastings operator.
+		for iter=1:num_iters
+    	(trace, _) = metropolis_hastings(trace, select(:burglar))
+		end
+    # From the final trace, read out the slope and
+    # the intercept.
+    choices = get_choices(trace)
+    return (choices[:burglar])
+end
+
+burglar = my_inference_program(1000)
+
+println("burglar: $burglar")
