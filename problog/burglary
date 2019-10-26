@@ -1,0 +1,17 @@
+
+
+0.7::burglary.
+0.20::earthquake.
+0.90::alarm :-   burglary, earthquake.
+0.80::alarm :-   burglary, \+earthquake.
+0.30::alarm :- \+burglary, earthquake.
+0.05::alarm :- \+burglary, \+earthquake.
+
+0.8::radio :- earthquake.
+0.1::radio :- \+earthquake.
+
+evidence(alarm,false).
+evidence(radio,true).
+
+query(burglary).
+query(earthquake).
