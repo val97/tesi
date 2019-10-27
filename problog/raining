@@ -1,0 +1,16 @@
+% Your model here
+
+0.4::raining.
+0.3::sprinkler.
+
+0.9::jackWetGrass :- raining.
+
+0.9::traceyWetGrass :- raining, sprinkler.
+0.7::traceyWetGrass :- \+raining, sprinkler.
+0.7::traceyWetGrass :- raining, \+sprinkler.
+
+evidence(traceyWetGrass,false).
+evidence(jackWetGrass,true).
+
+query(raining).
+query(sprinkler).

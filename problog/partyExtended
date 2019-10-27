@@ -1,0 +1,30 @@
+% Your model here
+% probabilistic facts
+%;;;Consider the decision problem as to whether or not to go ahead with a fund-raising garden party.If we go ahead with the party and it subsequently rains, then we will lose money (since very few people will show up); on the other hand, if we don’t go ahead with the party and it doesn’t rain we’re free to go and do something else fun.
+%An extension of the Party problem is that if we decide not to go ahead with the party, we have the opportunity to visit a friend. However, we’re not sure if this friend will be in. The question is should we still go ahead with the party?
+
+0.6::rain.
+0.8::friendInAndRain :- rain.
+0.9::friendInAndNotRain :- \+rain.
+
+?::doParty.
+?::goVisit.
+
+doPartyAndRain :- doParty, rain.
+dontPartyAndRain :- \+doParty, rain.
+doPartyAndDontRain :- doParty, \+rain.
+dontPartyAndDontRain :- \+doParty, \+rain.
+
+visitFriendOut :- goVisit,friendInAndRain.
+visitFrienIn:- goVisit,friendInAndNotRain.
+
+
+
+utility(doPartyAndRain,-100).
+utility(doPartyAndDontRain,500).
+utility(dontPartyAndRain,0).
+utility(dontPartyAndDontRain,50).
+
+utility(visitFriendOut,-100).
+utility(visitFrienIn,200).
+

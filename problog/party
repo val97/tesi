@@ -1,0 +1,15 @@
+% probabilistic facts
+
+0.6::rain.
+
+?::doParty.
+
+doPartyAndRain :- doParty, rain.
+dontPartyAndRain :- \+doParty, rain.
+doPartyAndDontRain :- doParty, \+rain.
+dontPartyAndDontRain :- \+doParty, \+rain.
+
+utility(doPartyAndRain,-100).
+utility(doPartyAndDontRain,500).
+utility(dontPartyAndRain,0).
+utility(dontPartyAndDontRain,50).
