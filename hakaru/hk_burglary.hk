@@ -1,0 +1,11 @@
+burglary = fn x7 pair(bool, bool):
+ match x7:
+ (true, true):
+   weight(21/500, return true) <|> weight(249/3125, return false)
+ (true, false):
+   weight(49/500, return true) <|> weight(121/3125, return false)
+ (false, true):
+   weight(9/500, return true) <|> weight(501/3125, return false)
+ (false, false):
+   weight(21/500, return true) <|> weight(1629/3125, return false)
+burglary((true,false))

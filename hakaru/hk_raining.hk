@@ -1,0 +1,11 @@
+raining = fn x7 pair(bool, bool):
+ match x7:
+  (true, true):
+   weight(63/500, return true) <|> weight(98/3125, return false)
+  (true, false):
+   weight(27/500, return true) <|> weight(392/3125, return false)
+  (false, true):
+   weight(7/500, return true) <|> weight(402/3125, return false)
+  (false, false):
+   weight(3/500, return true) <|> weight(1608/3125, return false)
+raining((true,true))

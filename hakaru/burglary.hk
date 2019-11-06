@@ -1,0 +1,9 @@
+def bern(p prob):
+    x <~ categorical([p, real2prob(1 - p)])
+    return [true, false][x]
+
+burglary <~ bern(0.2)
+earthquake <~ bern(0.2)
+alarm    <~ bern(if burglary || earthquake: 0.70 else:  0.01 )
+radio <~ bern(if earthquake: 0.7 else: 0.2)
+return ((alarm, radio) ,burglary)

@@ -1,0 +1,22 @@
+fn x7 pair(bool, bool):
+match x7:
+(x18, x19):
+  bern = fn p prob:
+         x <~ categorical([p, real2prob(+1/1 - prob2real(p))])
+         return [true, false][x]
+  burglary <~ bern(1/5)
+  earthquake <~ bern(1/5)
+  p = if burglary || earthquake: 7/10 else: 1/100
+  x29 <~ weight
+           ([p, real2prob(+1/1 - prob2real(p))][if x18: 0 else: 1]
+            / (summate x0 from 0 to size([p, real2prob(+1/1 - prob2real(p))]):
+                 [p, real2prob(+1/1 - prob2real(p))][x0]),
+            return ())
+  p = if earthquake: 7/10 else: 1/5
+  x28 <~ weight
+           ([p, real2prob(+1/1 - prob2real(p))][if x19: 0 else: 1]
+            / (summate x0 from 0 to size([p, real2prob(+1/1 - prob2real(p))]):
+                 [p, real2prob(+1/1 - prob2real(p))][x0]),
+            return ())
+  return burglary
+_: reject. measure(bool)

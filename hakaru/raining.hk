@@ -1,0 +1,9 @@
+def bern(p prob):
+    x <~ categorical([p, real2prob(1 - p)])
+    return [true, false][x]
+
+raining <~ bern(0.2)
+sprinkler <~ bern(0.2)
+traceyWetGrass    <~ bern(if raining || sprinkler: 0.9 else:  0.02 )
+jackWetGrass <~ bern(if raining: 0.7 else: 0.2)
+return ((traceyWetGrass, jackWetGrass) ,raining)

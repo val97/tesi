@@ -24,27 +24,20 @@ using Gen
 	return (alarm ,radio )
 end
 
-u = choicemap(:alarm => false, :radio => true)
+u = choicemap(:alarm => true, :radio => true)
 # Generate an initial trace consistent with the alarm’s sounding:
 (tr, _) = generate(burglar_model, (), u)
 println(get_choices(tr))
 global tot=0
 
 # Run Metropolis-Hastings
-for i=1:100
-	if(i==1)
-	   global tot=0
-	end
-	for i=1:100
-	  global tr,_ = mh(tr, select(:earthquake, :burglar)) 
-	  #(tr, _)= mh(tr, select(:earthquake, :burglar))
-	end
-	if(tr[:burglar])
-		tot=tot+1
-	end
-end
 
-println(tot\1000)
+trs, weights, lml = Gen.importance_sampling(burglar_model, (), u, 1000)
+probBurglar = sum([exp(weights[i]) * trs[i][:burglar] for i=1:1000])
+
+
+
+println(probBurglar)
 #weight = project(tr, select(:burglar=>100))
 weight = project(tr, select(:burglar))
 println(exp(weight))

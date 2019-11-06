@@ -11,12 +11,7 @@
 (defquery burglar-bayes-net [alarm radio]
   (let [earthquake (sample (flip 0.4))
 
-        burglar (cond (and (= alarm true )
-                           (= radio false)) 
-                         (sample (flip 0.8))
-                         (and (= radio true)
-                              (= alarm true))
-                         (sample (flip 0.2)))
+        burglar    (sample (flip 0.2)))
         radio-dist (cond (= earthquake true) 
                              (flip 0.7)
                              (= earthquake false) 
