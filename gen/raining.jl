@@ -24,22 +24,37 @@ using Gen
 	return (sprinkler ,raining )
 end
 
-u = choicemap(:traceyWetGrass => true, :jackWetGrass => true)
+u = choicemap(:traceyWetGrass => true, :jackWetGrass => false)
 # Generate an initial trace consistent with the alarm’s sounding:
 (tr, _) = generate(raining_model, (), u)
 println(get_choices(tr))
+
+
+#trs, weights, lml = Gen.importance_sampling(raining_model, (), u, 1000)
+#probBurglar = sum([exp(weights[i]) * trs[i][:raining] for i=1:1000])
+
 global tot=0
+global totf=0
 
+# Run importance sampling
 
-trs, weights, lml = Gen.importance_sampling(raining_model, (), u, 1000)
-probBurglar = sum([exp(weights[i]) * trs[i][:raining] for i=1:1000])
+#trs, weights, lml = Gen.importance_sampling(burglar_model, (), u, 1000)
+#probBurglar = sum([exp(weights[i]) * trs[i][:burglar] for i=1:1000])
+for j=1:100
+	#single samples
+	for i=1:100
+	  global tr,_ = mh(tr, select(:raining, :sprinkler))
+	end
+	choices=(get_choices(tr))
+	raining = choices[:raining]
+#uso global perchè julia ha un problema di scope	
+	if (earthquake)
+		global tot = tot+1
+  	else
+       		global totf = totf+1
+  	end
+end
 
-
-println(tot\1000)
-#weight = project(tr, select(:raining=>100))
-weight = project(tr, select(:raining))
-println(exp(weight))
-
-# Print the final trace
-println(get_choices(tr))
-
+println("true",tot)
+println("false",totf)
+println(tot/100)
