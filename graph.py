@@ -6,26 +6,25 @@ import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib as mpl
 
+#faccio una visita del grafo in ampiezza per la scrittura del modello in problog.
 def bfs_visit(G ,source):
     explored = []
     # keep track of nodes to be checked
     queue = [source]
     depth=-1
-    program=""
+    model=""
     while queue:
-        #print("queue",queue)
         node = queue.pop(0)
         if node not in explored:
             level = nx.get_node_attributes(G,'level')  # positions for all nodes
-            #print("level node "+str(node)+":"+str(level[node]))
             if(not (node=="source") ):
                 predec=":-"
-                for pred in G.predecessors(node):
+                for pred in G.predecessors(node):           #i predecessori di un nodo corrispondono ai nodi che lo influenzano.
                     isNegate = nx.get_edge_attributes(G,'isNegate')
                     if(level[pred]==-1):
                         prob=0.5
                         predec=""
-                        #program= program + "0.5::"+str(labels[node])+".\n"
+                        #model= model + "0.5::"+str(labels[node])+".\n"
                     elif(level[pred]==0):
                         prob=1.0
                         if(isNegate[(pred,node)]):
@@ -35,35 +34,28 @@ def bfs_visit(G ,source):
                     else:
                         prob=1.0
                         predec=predec+labels[pred]+","
-                program=program +str(prob)+ "::"+str(labels[node]) +predec+".\n"
-                #print(str(G.predecessors(node)))
-                #print(next(G.predecessors(node)))
-                #program.replace(",.",".")
+                model=model +str(prob)+ "::"+str(labels[node]) +predec+".\n"
 
             # add node to list of checked nodes
             explored.append(node)
             neighbours = G.adj[node]
-            #print("neighbours",node,neighbours)
-            #print("number ",len(neighbours))
-
             # add neighbours of node to queue
             for neighbour in neighbours:
                 queue.append(neighbour)
-    return explored,program.replace(";.",".").replace(",.",".")
+    return model.replace(";.",".").replace(",.",".")
 
 
-collection=["(u1,u2,u3)" ,"(not u1,not u2,u3)","(u2,not u3,u4)","(u1,u2,not u3)","(u1,not u2,u3)"]
+collection=["(u1,u2,u3)" ,"(not u1,not u2,u3)","(u2,not u3,u4)"]
 print(collection)
 labels={}
 lastPos=0;
 G = nx.DiGraph()
-G.add_node("source", pos=(-1,0),level=-1)
+G.add_node("source", pos=(-1,0),level=-1)       #il nodo "source" è un nodo di appoggio.
 labels["source"]="source"
 
 for i in range(0, len(collection)):
   # print(len(collection),i)
    k=collection[i].replace("(","").replace(")","").split(",")    #prendo tutte le variabil di C_i
-   print(k)
    #creo un nodo per ogni clausola di C e un dummyNode, il dummyNode mi è un nodo d'appoggio che uso per alleggerire i nodi entranti in Y
    #corrispondono a clause satisfaction testing component e overall satisfaction testing component
 
@@ -98,7 +90,9 @@ pos = nx.get_node_attributes(G,'pos')  # positions for all nodes
 nx.draw_networkx_nodes(G,pos)
 nx.draw_networkx_edges(G,pos)
 nx.draw_networkx_labels(G,pos , labels=labels)
-print(bfs_visit(G,"source")[1])
+program = bfs_visit(G,"source")
+#bisogna aggiungere le evidenze e le query
+print(program)
 
 plt.axis('off')
 plt.show()
