@@ -23,8 +23,11 @@ def problogModel(probModel,node,levels):
         else:
             prob=1.0
             predec=predec+labels[pred]+","
+
     probModel=probModel +str(prob)+ "::"+str(labels[node]) +predec+".\n"
-    return probModel.replace(";.",".").replace(",.",".")
+    probModel=probModel.replace(";.",".").replace(",.",".")
+    return probModel
+
 def anglicanModel(anglModel,node,levels):
     prior = "\t"
     probcond = ""
@@ -36,26 +39,42 @@ def anglicanModel(anglModel,node,levels):
         i+=1
         if(levels[pred]==-1):
             prob=0.5
-            prior = prior + labels[node]+" (sample(flip(%s))"%str(prob) +"\n"
+            prior = prior + labels[node]+" (sample(flip %s))"%str(prob) +"\n"
             #print("source, ",predec)
         elif(levels[pred]==0):
-            probcond= "\t)\n\t(sample(flip(1.0)))) \n"
+            probcond= "\t)\n\t(sample(flip 1.0))) \n"
             if(isNegate[(pred,node)]):
                 prior = prior+ clause + "(= %s false)"%labels[pred]+"\n\t"
             else:
                 prior = prior+ clause + "(= %s true)"%labels[pred]+"\n\t"
             clause = "\t"
         else:
-            probcond= "\t)\n\t(sample(flip(1.0)))) \n"
+            probcond= "\t)\n\t(sample(flip 1.0))) \n"
             prior = prior+ formula + "(= %s true)"%labels[pred]+"\n\t"
             formula = "\t"
     if(i==1):
         prior = prior.replace("(cond(and \n\t","(cond \n\t")
-        probcond = probcond.replace("\t)\n\t(sample(flip(1.0)))) \n", "\n\t(sample(flip(1.0)))) \n")
+        probcond = probcond.replace("\t)\n\t(sample(flip 1.0))) \n", "\n\t(sample(flip 1.0))) \n")
     #print("txt",predec)
     anglModel=anglModel +prior +probcond
     #print("angl",anglModel)
     return anglModel
+
+def quicksort(x):
+    if len(x) == 1 or len(x) == 0:
+        return x
+    else:
+        pivot = x[0]
+        i = 0
+        for j in range(len(x)-1):
+            if x[j+1] < pivot:
+                x[j+1],x[i+1] = x[i+1], x[j+1]
+                i += 1
+        x[0],x[i] = x[i],x[0]
+        first_part = quicksort(x[:i])
+        second_part = quicksort(x[i+1:])
+        first_part.append(x[i])
+        return first_part + second_part
 
 #faccio una visita del grafo in ampiezza per la scrittura del modello in problog.
 def bfs_visit(G ,source):
@@ -63,16 +82,17 @@ def bfs_visit(G ,source):
     # keep track of nodes to be checked
     queue = [source]
     depth=-1
+    y=""
     probModel=""
 
     anglModel="""
-(ns bayes-net \n
+(ns sat-net \n
     (:require [gorilla-plot.core :as plot] \n
         [anglican.stat :as s])\n
     (:use clojure.repl\n
         [anglican core runtime emit \n
         [inference :only [collect-by]]]))\n
-(defquery burglar-bayes-net [alarm radio]\n
+(defquery sat-bayes-net []\n
      (let [\n """
     #print(anglModel)
     while queue:
@@ -80,21 +100,36 @@ def bfs_visit(G ,source):
         if node not in explored:
             levels = nx.get_node_attributes(G,'level')  # positions for all nodes
             if(not (node=="source") ):
-                probModel=problogModel(probModel,node,levels)
-                anglModel=anglicanModel(anglModel,node,levels)
-            # add node to list of checked nodes
+                if(not labels[node]=="y"):
+                    probModel=problogModel(probModel,node,levels)
+                    anglModel=anglicanModel(anglModel,node,levels)
+                else:
+                    y=node
+                    print(node)
+            # nodeadd node to list of checked nodes
             explored.append(node)
             neighbours = G.adj[node]
             # add neighbours of node to queue
             for neighbour in neighbours:
                 queue.append(neighbour)
+                queue = quicksort(queue)
+                #print(queue)
+
+    anglModel=anglicanModel(anglModel,y,levels)
+    probModel=problogModel(probModel,y,levels)
     return probModel,anglModel
 
 
-collection=["(u1,u2,u3)" ,"(not u1,not u2,u3)","(u2,not u3,u4)"]
+collection=["(u1,u2,u3)" ,"(not u1,not u2,u3)","(u2,not u3,u4)","(u1,u2,not u3)","(u1,not u2,u3)"]
+'''1.0::c0:-u1;u2;u3.
+1.0::c1:-\+u1;\+u2;u3.
+1.0::c3:-u1;u2;\+u3.
+1.0::c4:-u1;\+u2;u3.
+1.0::c2:-u2;\+u3;u4.'''
 print(collection)
 labels={}
-lastPos=0;
+lastPos=0
+index=0
 G = nx.DiGraph()
 G.add_node("source", pos=(-1,0),level=-1)       #il nodo "source" è un nodo di appoggio.
 labels["source"]="source"
@@ -123,25 +158,40 @@ for i in range(0, len(collection)):
      if(k[var]==("not "+k[var].replace("not ",""))):
        isNegate=True
        k[var]=k[var].replace("not ","")
-     if not k[var] in labels:
-       #print(k[var],i+var)
-       G.add_node(k[var],pos=(0,lastPos),level=0)
-       G.add_edge("source",k[var])
-       labels[k[var]]=k[var]
+     index=0 - int(k[var].replace("not ","").replace("u",""))
+     print("inde",index)
+     if not index in labels:
+       print(k[var])
+
+       G.add_node(index,pos=(0,lastPos),level=0)
+       G.add_edge("source",index)
+       labels[index]=k[var]
        lastPos+=1
-     G.add_edge(k[var],i,isNegate=isNegate)
+     G.add_edge(index,i,isNegate=isNegate)
 
 
 pos = nx.get_node_attributes(G,'pos')  # positions for all nodes
-nx.draw_networkx_nodes(G,pos)
+nx.draw_networkx_nodes(G,pos,with_label=True)
 nx.draw_networkx_edges(G,pos)
 nx.draw_networkx_labels(G,pos , labels=labels)
-probModel = bfs_visit(G,"source")[0]
-anglModel = bfs_visit(G,"source")[1] +"]"
+anglQuery = """(->> (doquery :lmh sat-bayes-net [] :number-of-particles 100)
+     (take 10000)
+     (collect-by :result)
+     (s/empirical-distribution)
+     (#(plot/bar-chart (keys %) (vals %))))"""
+probQuery= "query(y)."
+probModel = bfs_visit(G,"source")[0]+probQuery
+anglModel = bfs_visit(G,"source")[1] +"]y))"+anglQuery
+
 #bisogna aggiungere le evidenze e le query
 print(probModel)
-print(anglModel)
+probFile=open("probSat","w")
+probFile.write(probModel)
+probFile.close()
+anglFile=open("anglSat.clj","w")
+anglFile.write(anglModel)
+anglFile.close()
 
 
 plt.axis('off')
-#plt.show()
+plt.show()
