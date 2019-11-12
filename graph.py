@@ -120,7 +120,7 @@ def bfs_visit(G ,source):
     return probModel,anglModel
 
 
-collection=["(u1,u2,u3)" ,"(not u1,not u2,u3)","(u2,not u3,u4)","(u1,u2,not u3)","(u1,not u2,u3)"]
+collection=["(u1,u2,u3)" ,"(not u1,not u2,u3)","(u2,not u3,u4)"]
 '''1.0::c0:-u1;u2;u3.
 1.0::c1:-\+u1;\+u2;u3.
 1.0::c3:-u1;u2;\+u3.
