@@ -6,43 +6,71 @@ import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib as mpl
 
+def problogModel(probModel,node,levels):
+    predec=":-"
+    for pred in G.predecessors(node):           #i predecessori di un nodo corrispondono ai nodi che lo influenzano.
+        isNegate = nx.get_edge_attributes(G,'isNegate')
+        if(levels[pred]==-1):
+            prob=0.5
+            predec=""
+            #model= model + "0.5::"+str(labels[node])+".\n"
+        elif(levels[pred]==0):
+            prob=1.0
+            if(isNegate[(pred,node)]):
+                predec=predec+"\+" +labels[pred]+";"
+            else:
+                predec=predec+labels[pred]+";"
+        else:
+            prob=1.0
+            predec=predec+labels[pred]+","
+    probModel=probModel +str(prob)+ "::"+str(labels[node]) +predec+".\n"
+    return probModel.replace(";.",".").replace(",.",".")
+def anglicanModel(anglModel,node,levels):
+    predec=":-"
+    for pred in G.predecessors(node):           #i predecessori di un nodo corrispondono ai nodi che lo influenzano.
+        isNegate = nx.get_edge_attributes(G,'isNegate')
+        if(levels[pred]==-1):
+            prob=0.5
+            predec = labels[node]+"sample(flip(%prob)s)"%str(prob) 
+            anglModel
+        elif(levels[pred]==0):
+            print()
+        else:
+            print()
+    anglModel=anglModel
+    return anglModel
+
 #faccio una visita del grafo in ampiezza per la scrittura del modello in problog.
 def bfs_visit(G ,source):
     explored = []
     # keep track of nodes to be checked
     queue = [source]
     depth=-1
-    model=""
+    probModel=""
+
+    anglModel=""" (ns bayes-net \n
+            (:require [gorilla-plot.core :as plot] \n
+                [anglican.stat :as s])\n
+            (:use clojure.repl\n
+                [anglican core runtime emit \n
+                [inference :only [collect-by]]]))\n
+            (defquery burglar-bayes-net [alarm radio]\n
+             (let [\n """
+    print(anglModel)
     while queue:
         node = queue.pop(0)
         if node not in explored:
-            level = nx.get_node_attributes(G,'level')  # positions for all nodes
+            levels = nx.get_node_attributes(G,'level')  # positions for all nodes
             if(not (node=="source") ):
-                predec=":-"
-                for pred in G.predecessors(node):           #i predecessori di un nodo corrispondono ai nodi che lo influenzano.
-                    isNegate = nx.get_edge_attributes(G,'isNegate')
-                    if(level[pred]==-1):
-                        prob=0.5
-                        predec=""
-                        #model= model + "0.5::"+str(labels[node])+".\n"
-                    elif(level[pred]==0):
-                        prob=1.0
-                        if(isNegate[(pred,node)]):
-                            predec=predec+"\+" +labels[pred]+";"
-                        else:
-                            predec=predec+labels[pred]+";"
-                    else:
-                        prob=1.0
-                        predec=predec+labels[pred]+","
-                model=model +str(prob)+ "::"+str(labels[node]) +predec+".\n"
-
+                probModel=problogModel(probModel,node,levels)
+                anglModel=anglicanModel(anglModel,node,levels)
             # add node to list of checked nodes
             explored.append(node)
             neighbours = G.adj[node]
             # add neighbours of node to queue
             for neighbour in neighbours:
                 queue.append(neighbour)
-    return model.replace(";.",".").replace(",.",".")
+    return probModel
 
 
 collection=["(u1,u2,u3)" ,"(not u1,not u2,u3)","(u2,not u3,u4)"]
