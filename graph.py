@@ -26,18 +26,35 @@ def problogModel(probModel,node,levels):
     probModel=probModel +str(prob)+ "::"+str(labels[node]) +predec+".\n"
     return probModel.replace(";.",".").replace(",.",".")
 def anglicanModel(anglModel,node,levels):
-    predec=":-"
+    prior = "\t"
+    probcond = ""
+    clause =   labels[node] +" (cond(or \n\t\t"
+    formula = labels[node] +" (cond(and \n\t\t"
+    i=0
     for pred in G.predecessors(node):           #i predecessori di un nodo corrispondono ai nodi che lo influenzano.
         isNegate = nx.get_edge_attributes(G,'isNegate')
+        i+=1
         if(levels[pred]==-1):
             prob=0.5
-            predec = labels[node]+"sample(flip(%prob)s)"%str(prob) 
-            anglModel
+            prior = prior + labels[node]+" (sample(flip(%s))"%str(prob) +"\n"
+            #print("source, ",predec)
         elif(levels[pred]==0):
-            print()
+            probcond= "\t)\n\t(sample(flip(1.0)))) \n"
+            if(isNegate[(pred,node)]):
+                prior = prior+ clause + "(= %s false)"%labels[pred]+"\n\t"
+            else:
+                prior = prior+ clause + "(= %s true)"%labels[pred]+"\n\t"
+            clause = "\t"
         else:
-            print()
-    anglModel=anglModel
+            probcond= "\t)\n\t(sample(flip(1.0)))) \n"
+            prior = prior+ formula + "(= %s true)"%labels[pred]+"\n\t"
+            formula = "\t"
+    if(i==1):
+        prior = prior.replace("(cond(and \n\t","(cond \n\t")
+        probcond = probcond.replace("\t)\n\t(sample(flip(1.0)))) \n", "\n\t(sample(flip(1.0)))) \n")
+    #print("txt",predec)
+    anglModel=anglModel +prior +probcond
+    #print("angl",anglModel)
     return anglModel
 
 #faccio una visita del grafo in ampiezza per la scrittura del modello in problog.
@@ -48,15 +65,16 @@ def bfs_visit(G ,source):
     depth=-1
     probModel=""
 
-    anglModel=""" (ns bayes-net \n
-            (:require [gorilla-plot.core :as plot] \n
-                [anglican.stat :as s])\n
-            (:use clojure.repl\n
-                [anglican core runtime emit \n
-                [inference :only [collect-by]]]))\n
-            (defquery burglar-bayes-net [alarm radio]\n
-             (let [\n """
-    print(anglModel)
+    anglModel="""
+(ns bayes-net \n
+    (:require [gorilla-plot.core :as plot] \n
+        [anglican.stat :as s])\n
+    (:use clojure.repl\n
+        [anglican core runtime emit \n
+        [inference :only [collect-by]]]))\n
+(defquery burglar-bayes-net [alarm radio]\n
+     (let [\n """
+    #print(anglModel)
     while queue:
         node = queue.pop(0)
         if node not in explored:
@@ -70,7 +88,7 @@ def bfs_visit(G ,source):
             # add neighbours of node to queue
             for neighbour in neighbours:
                 queue.append(neighbour)
-    return probModel
+    return probModel,anglModel
 
 
 collection=["(u1,u2,u3)" ,"(not u1,not u2,u3)","(u2,not u3,u4)"]
@@ -118,9 +136,12 @@ pos = nx.get_node_attributes(G,'pos')  # positions for all nodes
 nx.draw_networkx_nodes(G,pos)
 nx.draw_networkx_edges(G,pos)
 nx.draw_networkx_labels(G,pos , labels=labels)
-program = bfs_visit(G,"source")
+probModel = bfs_visit(G,"source")[0]
+anglModel = bfs_visit(G,"source")[1] +"]"
 #bisogna aggiungere le evidenze e le query
-print(program)
+print(probModel)
+print(anglModel)
+
 
 plt.axis('off')
-plt.show()
+#plt.show()
