@@ -8,4 +8,4 @@
 1.0::d0:-c0.
 1.0::d1:-d0,c1.
 1.0::y:-d1,c2.
-query(y).
+evidence(y,true).query(c0).
