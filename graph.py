@@ -1,3 +1,4 @@
+
 #U=(u1,u2,u3,u4)
 #C={(u1,u2,u3), (!u1,!u2,u3), (u2,!u3,u4)}
 import os
@@ -9,7 +10,6 @@ import matplotlib as mpl
 def problogModel(probModel,node,levels):
     predec=":-"
     observe=""
-
     for pred in G.predecessors(node):           #i predecessori di un nodo corrispondono ai nodi che lo influenzano.
         isNegate = nx.get_edge_attributes(G,'isNegate')
         if(levels[pred]==-1):
@@ -44,7 +44,12 @@ def anglicanModel(anglModel,node,levels):
     formula = labels[node] +" (cond(and \n\t\t"
     flag=False
     i=0
+    print("trovo i predecessori di ", node)
+
     for pred in G.predecessors(node):           #i predecessori di un nodo corrispondono ai nodi che lo influenzano.
+    #    print("sono un predecessore di ", node)
+        print("e mi chiamo ", pred)
+
         isNegate = nx.get_edge_attributes(G,'isNegate')
         i+=1
         if(levels[pred]==-1):
@@ -57,6 +62,7 @@ def anglicanModel(anglModel,node,levels):
             probcond= "\t)\n\t(sample(flip 1.0)) \n"
             probcond2="\t)\n\t(sample(flip 0.0))) \n"
             if(isNegate[(pred,node)]):
+                #print("sono negato",node, pred,prior)
                 prior = prior+ clause + "(= %s false)"%labels[pred]+"\n\t"
                 clause2= clause2 +  "(= %s true)"%labels[pred]+"\n\t"
             else:
@@ -68,8 +74,8 @@ def anglicanModel(anglModel,node,levels):
         else:
             if( not flag):
                 clause2="(or"
-            probcond= "\t)\n\t(flip 1.0) \n"
-            probcond2="\t)\n\t(flip 0.0)) \n"
+            probcond= "\t)\n\t(sample(flip 1.0)) \n"
+            probcond2="\t)\n\t(sample(flip 0.0))) \n"
 
             prior = prior+ formula + "(= %s true)"%labels[pred]+"\n\t"
             clause2= clause2 +  "(= %s false)"%labels[pred]+"\n\t"
@@ -77,11 +83,11 @@ def anglicanModel(anglModel,node,levels):
             flag=True
 
     if(i==1):#se alla fine del ciclo ho una sola condizione tolgo l'and
-        print("CIAO CI SONO",node)
+    #    print("CIAO CI SONO",node)
         prior = prior.replace("(cond(and \n\t","(cond \n\t")
-        probcond = probcond.replace("\t)\n\t(flip 1.0) \n", "\n\t(flip 1.0) \n")
+        probcond = probcond.replace("\t)\n\t(sample(flip 1.0)) \n", "\n\t(sample(flip 1.0))  \n")
         clause2= clause2.replace("(or","")
-        probcond2=probcond2.replace("\t)\n\t(flip 0.0)) \n","\t\n\t(flip 0.0)) \n")
+        probcond2=probcond2.replace("\t)\n\t(sample(flip 0.0))) \n","\t\n\t(sample(flip 0.0))) \n")
     #print("txt",predec)
     anglModel=anglModel +prior +probcond+clause2+probcond2
     #print("angl",anglModel)
@@ -129,10 +135,11 @@ def bfs_visit(G ,source):
             levels = nx.get_node_attributes(G,'level')  # positions for all nodes
             if(not (node=="source") ):
                 if(not labels[node]=="y"):
+                    print("esploro",node)
                     probModel=problogModel(probModel,node,levels)[0]
-                    obsProb = obsProb +problogModel(probModel,node,levels,)[1]
+                    #obsProb = obsProb +problogModel(probModel,node,levels,)[1]
                     anglModel=anglicanModel(anglModel,node,levels)[0]
-                    obsAngl=obsAngl + anglicanModel(anglModel,node,levels)[1]
+                    #obsAngl=obsAngl + anglicanModel(anglModel,node,levels)[1]
                 else:
                     y=node
                     #print(node)
@@ -146,14 +153,14 @@ def bfs_visit(G ,source):
                 queue.append(neighbour)
                 queue = quicksort(queue)
 
-    obsProb="(observe y true)"
-    anglModel=anglicanModel(anglModel,y,levels)[0]+"]"+obsAngl +"c0))"
-    obsProb="evidence(y,true)."
+#    obsProb="(observe y true)"
+    anglModel=anglicanModel(anglModel,y,levels)[0]+"]"+obsAngl +"y))"
+#    obsProb="evidence(y,true)."
     Model=problogModel(probModel,y,levels)[0]+obsProb
     return Model,anglModel
 
 
-collection=["(u1,u2,u3)" ,"(not u1,not u2,u3)","(u2,not u3,u4)"]
+collection=['(u2,u19,not u17)', '(u2,u3,not u6)', '(u1,u17,not u3)', '(u6,not u15,not u16)', '(u7,u13,u8)', '(not u9,u11,u2)', '(not u8,u11,u1)', '(u6,not u5,not u13)']
 '''1.0::c0:-u1;u2;u3.
 1.0::c1:-\+u1;\+u2;u3.
 1.0::c3:-u1;u2;\+u3.
@@ -210,13 +217,13 @@ anglQuery = """(->> (doquery :lmh sat-bayes-net [] :number-of-particles 100)
      (collect-by :result)
      (s/empirical-distribution)
      (#(plot/bar-chart (keys %) (vals %))))"""
-probQuery = "query(c0)."
+probQuery = "query(y)."
 probModel = bfs_visit(G,"source")[0]+probQuery
 anglModel = bfs_visit(G,"source")[1] +anglQuery
 
 #bisogna aggiungere le evidenze e le query
-print(probModel)
-print(anglModel)
+#print(probModel)
+#print(anglModel)
 
 probFile=open("probSat","w")
 probFile.write(probModel)
