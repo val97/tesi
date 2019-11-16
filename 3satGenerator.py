@@ -4,11 +4,12 @@ import numpy as np
 #creo un numero random di variabili che sia abbastanza grande
 
 def generate3satFormula():
-   numOfVariables=np.random.random_integers(10, 20, size=None)
+   numOfVariables=20#np.random.random_integers(10, 20, size=None)
    print(numOfVariables)
    var=[]
    for i in range(0,numOfVariables):
-      var.append('u%i'%i+1)
+      index=i+1
+      var.append('u%i'%index)
    #print(var)
 
    numOfClauses = int(numOfVariables*4.3)

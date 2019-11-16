@@ -6,6 +6,10 @@ import networkx as nx
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib as mpl
+import pycosat
+
+#def check3SatSatisfiability:
+
 
 def problogModel(probModel,node,levels):
     predec=":-"
@@ -33,63 +37,45 @@ def problogModel(probModel,node,levels):
     return probModel,observe
 
 def anglicanModel(anglModel,node,levels):
+    observe="" #da togliere
     prior = "\t"
-    probcond = ""
-    probcond2 = ""
-    observe=""
-    clause =   labels[node] +" (cond(or \n\t\t"
-    clause2 = ""
-    clause3 = ""
+    cond1 = ""
+    cond2 = ""
 
-    formula = labels[node] +" (cond(and \n\t\t"
-    flag=False
+
     i=0
-    print("trovo i predecessori di ", node)
-
+    val=[]
+    infl=[]
+    i=0
     for pred in G.predecessors(node):           #i predecessori di un nodo corrispondono ai nodi che lo influenzano.
-    #    print("sono un predecessore di ", node)
-        print("e mi chiamo ", pred)
 
         isNegate = nx.get_edge_attributes(G,'isNegate')
-        i+=1
         if(levels[pred]==-1):
             prob=0.5
             prior = prior + labels[node]+" (sample(flip %s))"%str(prob) +"\n"
             #print("source, ",predec)
-        elif(levels[pred]==0):
-            if( not flag):
-                clause2="(and"
-            probcond= "\t)\n\t(sample(flip 1.0)) \n"
-            probcond2="\t)\n\t(sample(flip 0.0))) \n"
+        elif (levels[pred]==0):
+
+            infl.append(labels[pred])
             if(isNegate[(pred,node)]):
-                #print("sono negato",node, pred,prior)
-                prior = prior+ clause + "(= %s false)"%labels[pred]+"\n\t"
-                clause2= clause2 +  "(= %s true)"%labels[pred]+"\n\t"
+                val.append("false")
             else:
-                prior = prior+ clause + "(= %s true)"%labels[pred]+"\n\t"
-                clause2= clause2 + "(= %s false)"%labels[pred]+"\n\t"
-            clause = "\t"
-            flag=True
-
+                val.append("true")
+            #print(infl)
+            if(i==2):
+                prior=prior + labels[node] + " (getPrior " + infl[0]+ " " + infl[1]+ " " + infl[2] + " " + val[0]+ " " +val[1]+ " " +val[2] +")\n"
+            i+=1
         else:
-            if( not flag):
-                clause2="(or"
-            probcond= "\t)\n\t(sample(flip 1.0)) \n"
-            probcond2="\t)\n\t(sample(flip 0.0))) \n"
 
-            prior = prior+ formula + "(= %s true)"%labels[pred]+"\n\t"
-            clause2= clause2 +  "(= %s false)"%labels[pred]+"\n\t"
-            formula = "\t"
-            flag=True
-
-    if(i==1):#se alla fine del ciclo ho una sola condizione tolgo l'and
-    #    print("CIAO CI SONO",node)
-        prior = prior.replace("(cond(and \n\t","(cond \n\t")
-        probcond = probcond.replace("\t)\n\t(sample(flip 1.0)) \n", "\n\t(sample(flip 1.0))  \n")
-        clause2= clause2.replace("(or","")
-        probcond2=probcond2.replace("\t)\n\t(sample(flip 0.0))) \n","\t\n\t(sample(flip 0.0))) \n")
-    #print("txt",predec)
-    anglModel=anglModel +prior +probcond+clause2+probcond2
+            #print("sono il nodo d'appoggio")
+            infl.append(labels[pred])
+            prior=prior+""
+            i+=1
+            if(i==2):
+                prior=prior + labels[node] + " (getY " + infl[0]+ " " + infl[1]+ " " + ")\n"
+    if(i==1):
+        prior=prior + labels[node] + "(cond(= "+labels[pred] +" true)\n(sample(flip 1.0))\n(= "+labels[pred] +" false)\n(sample(flip 0.0)))\n"
+    anglModel=anglModel+prior
     #print("angl",anglModel)
     return anglModel, observe
 
@@ -126,6 +112,28 @@ def bfs_visit(G ,source):
     (:use clojure.repl\n
         [anglican core runtime emit \n
         [inference :only [collect-by]]]))\n
+
+    (defm getPrior[u1 u2 u3 val1 val2 val3]
+        (let[
+            c (cond(or
+		          (= u1 val1)
+		          (= u2 val2)
+		          (= u3 val3))
+	          (sample(flip 1.0))
+              (and(not= u1 val1)
+                  (not= u2 val2)
+                  (not= u3 val3))
+    	      (sample(flip 0.0)))]c))
+    (defm getY[u1 u2]
+        (let[
+            c (cond(and
+                  (= u1 true)
+                  (= u2 true))
+
+              (sample(flip 1.0))
+              (or(not= u1 true)
+                  (not= u2 true))
+              (sample(flip 0.0)))]c))
 (defquery sat-bayes-net []\n
      (let [\n """
     #print(anglModel)
@@ -160,13 +168,8 @@ def bfs_visit(G ,source):
     return Model,anglModel
 
 
-collection=['(u2,u19,not u17)', '(u2,u3,not u6)', '(u1,u17,not u3)', '(u6,not u15,not u16)', '(u7,u13,u8)', '(not u9,u11,u2)', '(not u8,u11,u1)', '(u6,not u5,not u13)']
-'''1.0::c0:-u1;u2;u3.
-1.0::c1:-\+u1;\+u2;u3.
-1.0::c3:-u1;u2;\+u3.
-1.0::c4:-u1;\+u2;u3.
-1.0::c2:-u2;\+u3;u4.'''
-print(collection)
+collection=['(u1,not u2,not u13)', '(not u12,u5,u6)', '(u6,not u1,not u2)', '(not u6,not u14,u8)', '(u18,not u11,u13)', '(u8,u10,u12)', '(u18,not u17,not u6)', '(u8,not u16,u5)', '(not u8,u15,not u10)', '(not u3,u7,u13)', '(not u4,u8,not u10)', '(not u20,not u7,not u2)', '(not u17,u15,u5)', '(u10,not u15,u11)', '(not u5,u8,u15)', '(u9,not u4,u14)', '(not u19,not u16,not u13)', '(u5,u6,not u10)', '(u8,u11,not u16)', '(not u7,not u12,not u13)', '(u17,u12,not u14)', '(u9,u20,not u13)', '(u18,not u17,u15)', '(not u4,not u18,not u6)', '(u2,not u4,u9)', '(u17,u7,u19)', '(not u15,u9,not u11)', '(not u2,u13,not u15)', '(not u13,u2,not u19)', '(not u14,not u9,u17)', '(not u18,not u20,not u2)', '(not u2,not u16,u10)', '(not u3,u5,u4)', '(not u4,not u7,not u10)', '(u8,u6,u17)', '(not u16,u12,not u13)', '(u5,u16,not u19)', '(u4,not u8,not u17)', '(u15,u12,u6)', '(not u2,u14,not u19)', '(not u8,not u7,u18)', '(u17,not u3,u6)', '(u14,not u18,not u13)', '(not u15,u8,u9)', '(u19,not u5,u10)', '(u20,not u6,u14)', '(u1,not u11,not u20)', '(not u5,not u17,u4)', '(u6,not u3,not u4)', '(u4,u13,not u6)', '(not u1,u9,u3)', '(not u20,not u3,not u1)', '(u19,not u12,u17)', '(not u12,not u13,u16)', '(u16,not u10,u6)', '(u4,u14,not u9)', '(not u6,u12,u18)', '(u19,u5,u17)', '(not u6,not u5,u17)', '(u14,not u11,not u7)', '(u20,u6,not u19)', '(not u7,u6,u20)', '(u18,u15,not u3)', '(u18,not u19,u14)', '(not u15,u20,u8)', '(not u2,u12,not u20)', '(not u16,u20,not u4)', '(not u9,u16,u20)', '(not u11,u9,u8)', '(u20,u13,u2)', '(not u20,not u5,not u8)', '(u15,u12,not u13)', '(not u18,u14,u15)', '(u19,u2,not u12)', '(u10,not u9,not u11)', '(u8,not u17,u13)', '(u7,u14,u11)', '(u11,not u20,u8)', '(u9,u17,not u2)', '(u1,u4,u19)', '(u9,u14,not u2)', '(not u18,u7,u12)', '(not u7,u8,u16)', '(not u1,not u20,u15)', '(u14,not u15,u1)', '(u5,not u3,not u18)']
+print(len(collection))
 labels={}
 lastPos=0
 index=0
@@ -223,7 +226,7 @@ anglModel = bfs_visit(G,"source")[1] +anglQuery
 
 #bisogna aggiungere le evidenze e le query
 #print(probModel)
-#print(anglModel)
+print("anglmodel",anglModel)
 
 probFile=open("probSat","w")
 probFile.write(probModel)
@@ -231,6 +234,9 @@ probFile.close()
 anglFile=open("anglSat.clj","w")
 anglFile.write(anglModel)
 anglFile.close()
+cnf=[ [ 1,- 2,- 13],[- 12, 5, 6],[ 6,- 1,- 2],[- 6,- 14, 8],[ 18,- 11, 13],[ 8, 10, 12],[ 18,- 17,- 6],[ 8,- 16, 5],[- 8, 15,- 10],[- 3, 7, 13],[- 4, 8,- 10],[- 20,- 7,- 2],[- 17, 15, 5],[ 10,- 15, 11],[- 5, 8, 15],[ 9,- 4, 14],[- 19,- 16,- 13],[ 5, 6,- 10],[ 8, 11,- 16],[- 7,- 12,- 13],[ 17, 12,- 14],[ 9, 20,- 13],[ 18,- 17, 15],[- 4,- 18,- 6],[ 2,- 4, 9],[ 17, 7, 19],[- 15, 9,- 11],[- 2, 13,- 15],[- 13, 2,- 19],[- 14,- 9, 17],[- 18,- 20,- 2],[- 2,- 16, 10],[- 3, 5, 4],[- 4,- 7,- 10],[ 8, 6, 17],[- 16, 12,- 13],[ 5, 16,- 19],[ 4,- 8,- 17],[ 15, 12, 6],[- 2, 14,- 19],[- 8,- 7, 18],[ 17,- 3, 6],[ 14,- 18,- 13],[- 15, 8, 9],[ 19,- 5, 10],[ 20,- 6, 14],[ 1,- 11,- 20],[- 5,- 17, 4],[ 6,- 3,- 4],[ 4, 13,- 6],[- 1, 9, 3],[- 20,- 3,- 1],[ 19,- 12, 17],[- 12,- 13, 16],[ 16,- 10, 6],[ 4, 14,- 9],[- 6, 12, 18],[ 19, 5, 17],[- 6,- 5, 17],[ 14,- 11,- 7],[ 20, 6,- 19],[- 7, 6, 20],[ 18, 15,- 3],[ 18,- 19, 14],[- 15, 20, 8],[- 2, 12,- 20],[- 16, 20,- 4],[- 9, 16, 20],[- 11, 9, 8],[ 20, 13, 2],[- 20,- 5,- 8],[ 15, 12,- 13],[- 18, 14, 15],[ 19, 2,- 12],[ 10,- 9,- 11],[ 8,- 17, 13],[ 7, 14, 11],[ 11,- 20, 8],[ 9, 17,- 2],[ 1, 4, 19],[ 9, 14,- 2],[- 18, 7, 12],[- 7, 8, 16],[- 1,- 20, 15],[ 14,- 15, 1], [ 5,- 3,- 18]]
+result=pycosat.solve(cnf)
+print(result)
 
 
 plt.axis('off')
