@@ -31,7 +31,7 @@ def generate3satFormula():
       var.append('u%i'%index)
    #print(var)
 
-   numOfClauses = int(numOfVariables*4 )
+   numOfClauses = int(numOfVariables*4.3 )
    #print(numOfClauses)
    formula=[]
    clause="("
