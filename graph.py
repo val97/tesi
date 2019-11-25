@@ -1,12 +1,11 @@
-
-#U=(u1,u2,u3,u4)
-#C={(u1,u2,u3), (!u1,!u2,u3), (u2,!u3,u4)}
+#!/usr/bin/python3
 import os
 import networkx as nx
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib as mpl
 import pycosat
+import sys
 
 
 
@@ -22,8 +21,8 @@ def check3SatSatisfiability(collection):
 
     return pycosat.solve(trialcnf)
 
-def generate3satFormula():
-   numOfVariables=20#np.random.random_integers(10, 20, size=None)
+def generate3satFormula(varNum, ratio):
+   numOfVariables=varNum#np.random.random_integers(10, 20, size=None)
    print(numOfVariables)
    var=[]
    for i in range(0,numOfVariables):
@@ -31,7 +30,7 @@ def generate3satFormula():
       var.append('u%i'%index)
    #print(var)
 
-   numOfClauses = int(numOfVariables*4.3 )
+   numOfClauses = int(numOfVariables * ratio )
    #print(numOfClauses)
    formula=[]
    clause="("
@@ -141,13 +140,13 @@ def bfs_visit(G ,source):
     probModel=""
 
     anglModel="""
-(ns sat-net \n
-    (:require [gorilla-plot.core :as plot] \n
-        [anglican.stat :as s])\n
-    (:use clojure.repl\n
-        [anglican core runtime emit \n
-        [inference :only [collect-by]]]))\n
+(ns anglsat.core
+(:require
+        [anglican.stat :as s])
+(:use [anglican.core :refer [doquery]]
 
+       [anglican runtime emit
+       [inference :only [collect-by] ]]))
     (defm getPrior[u1 u2 u3 val1 val2 val3]
         (let[
             c (cond(or
@@ -169,7 +168,7 @@ def bfs_visit(G ,source):
               (or(= u1 false)
                   (= u2 false))
               (sample(flip 0.0)))]c))
-(defquery sat-bayes-net []\n
+(defquery anglsat []\n
      (let [\n """
     #print(anglModel)
     while queue:
@@ -206,7 +205,9 @@ def bfs_visit(G ,source):
 #collection=['(u1,not u2,not u13)', '(not u12,u5,u6)', '(u6,not u1,not u2)', '(not u6,not u14,u8)', '(u18,not u11,u13)', '(u8,u10,u12)', '(u18,not u17,not u6)', '(u8,not u16,u5)', '(not u8,u15,not u10)', '(not u3,u7,u13)', '(not u4,u8,not u10)', '(not u20,not u7,not u2)', '(not u17,u15,u5)', '(u10,not u15,u11)', '(not u5,u8,u15)', '(u9,not u4,u14)', '(not u19,not u16,not u13)', '(u5,u6,not u10)', '(u8,u11,not u16)', '(not u7,not u12,not u13)', '(u17,u12,not u14)', '(u9,u20,not u13)', '(u18,not u17,u15)', '(not u4,not u18,not u6)', '(u2,not u4,u9)', '(u17,u7,u19)', '(not u15,u9,not u11)', '(not u2,u13,not u15)', '(not u13,u2,not u19)', '(not u14,not u9,u17)', '(not u18,not u20,not u2)', '(not u2,not u16,u10)', '(not u3,u5,u4)', '(not u4,not u7,not u10)', '(u8,u6,u17)', '(not u16,u12,not u13)', '(u5,u16,not u19)', '(u4,not u8,not u17)', '(u15,u12,u6)', '(not u2,u14,not u19)', '(not u8,not u7,u18)', '(u17,not u3,u6)', '(u14,not u18,not u13)', '(not u15,u8,u9)', '(u19,not u5,u10)', '(u20,not u6,u14)', '(u1,not u11,not u20)', '(not u5,not u17,u4)', '(u6,not u3,not u4)', '(u4,u13,not u6)', '(not u1,u9,u3)', '(not u20,not u3,not u1)', '(u19,not u12,u17)', '(not u12,not u13,u16)', '(u16,not u10,u6)', '(u4,u14,not u9)', '(not u6,u12,u18)', '(u19,u5,u17)', '(not u6,not u5,u17)', '(u14,not u11,not u7)', '(u20,u6,not u19)', '(not u7,u6,u20)', '(u18,u15,not u3)', '(u18,not u19,u14)', '(not u15,u20,u8)', '(not u2,u12,not u20)', '(not u16,u20,not u4)', '(not u9,u16,u20)', '(not u11,u9,u8)', '(u20,u13,u2)', '(not u20,not u5,not u8)', '(u15,u12,not u13)', '(not u18,u14,u15)', '(u19,u2,not u12)', '(u10,not u9,not u11)', '(u8,not u17,u13)', '(u7,u14,u11)', '(u11,not u20,u8)', '(u9,u17,not u2)', '(u1,u4,u19)', '(u9,u14,not u2)', '(not u18,u7,u12)', '(not u7,u8,u16)', '(not u1,not u20,u15)', '(u14,not u15,u1)', '(u5,not u3,not u18)']
 #this is a shorter unsat formula
 #collection=['(u1,u2,u3)','(u1,u2,not u3)','(u1,not u2,u3)','(u1,not u2,not u3)','(not u1,u2,u3)''(not u1,u2,not u3)','(not u1,not u2,u3)','(not u1,not u2,u3)','( u4,not u2,not u3)']
-collection=generate3satFormula()
+varNum= int(sys.argv[1])
+ratio= float(sys.argv[2])
+collection=generate3satFormula(varNum, ratio)
 print(len(collection))
 labels={}
 lastPos=0
@@ -253,11 +254,16 @@ pos = nx.get_node_attributes(G,'pos')  # positions for all nodes
 nx.draw_networkx_nodes(G,pos,with_label=True)
 nx.draw_networkx_edges(G,pos)
 nx.draw_networkx_labels(G,pos , labels=labels)
-anglQuery = """(->> (doquery :lmh sat-bayes-net [] :number-of-particles 100)
-     (take 10000)
-     (collect-by :result)
-     (s/empirical-distribution)
-     (#(plot/bar-chart (keys %) (vals %))))"""
+anglQuery = """(defn -main [& args]
+  (println
+   (->> (doquery :lmh anglsat [true true]
+                 :number-of-particles 100)
+        (take 1000)
+        (map #(vector
+               (:result %)
+               (:log-weight %)))
+ (s/empirical-distribution)
+        )))"""
 probQuery = "query(y)."
 probModel = bfs_visit(G,"source")[0]+probQuery
 anglModel = bfs_visit(G,"source")[1] +anglQuery
@@ -266,10 +272,10 @@ anglModel = bfs_visit(G,"source")[1] +anglQuery
 #print(probModel)
 #print("anglmodel",anglModel)
 
-probFile=open("probSat","w")
+probFile=open("probSat"+str(varNum)+".pl","w")
 probFile.write(probModel)
 probFile.close()
-anglFile=open("anglSat.clj","w")
+anglFile=open("/home/valentina/Desktop/anglican1/anglsat/src/anglsat/core.clj","w")
 anglFile.write(anglModel)
 anglFile.close()
 result= check3SatSatisfiability(collection)
