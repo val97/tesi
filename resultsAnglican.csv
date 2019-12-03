@@ -1,46 +1,2770 @@
-numVar, ratio,result,time real,time user, time sys
-10,.50,{false 0.3940000000000003,, true 0.6060000000000004} real 0m26,629s user 0m31,281s
-10,1.00,{false 0.6290000000000004,, true 0.3710000000000003} real 0m26,385s user 0m31,105s
-10,1.50,{true 0.11200000000000007,, false 0.8880000000000007} real 0m26,959s user 0m31,493s
-10,2.00,{false 0.9580000000000007,, true 0.04200000000000001} real 0m26,846s user 0m31,621s
-10,2.50,{true 0.16400000000000012,, false 0.8360000000000006} real 0m27,161s user 0m31,843s
-10,3.00,{false 1.0000000000000007}, real 0m27,450s user 0m31,946s sys 0m1,159s
-10,3.50,{false 0.9780000000000008,, true 0.021999999999999995} real 0m27,708s user 0m32,326s
-10,4.00,{false 1.0000000000000007}, real 0m29,768s user 0m34,648s sys 0m1,210s
-10,4.30,{false 1.0000000000000007}, real 0m29,264s user 0m34,058s sys 0m1,148s
-10,5.00,{false 1.0000000000000007}, real 0m28,729s user 0m33,438s sys 0m1,166s
-10,5.50,{false 1.0000000000000007}, real 0m28,937s user 0m33,428s sys 0m1,361s
-20,.50,{false 0.7200000000000005,, true 0.2800000000000002} real 0m26,517s user 0m31,177s
-20,1.00,{false 0.9730000000000008,, true 0.027} real 0m27,165s user 0m31,836s
-20,1.50,{false 0.9940000000000008,, true 0.005999999999999996} real 0m27,658s user 0m32,404s
-20,2.00,{false 1.0000000000000007}, real 0m28,259s user 0m32,873s sys 0m1,237s
-20,2.50,{false 1.0000000000000007}, real 0m28,793s user 0m33,553s sys 0m1,081s
-20,3.00,{false 1.0000000000000007}, real 0m29,415s user 0m34,298s sys 0m1,042s
-20,3.50,{false 1.0000000000000007}, real 0m29,772s user 0m34,697s sys 0m1,093s
-20,4.00,{false 1.0000000000000007}, real 0m30,600s user 0m35,436s sys 0m1,095s
-20,4.30,{false 1.0000000000000007}, real 0m31,179s user 0m36,272s sys 0m1,080s
-20,5.00,{false 1.0000000000000007}, real 0m31,943s user 0m36,994s sys 0m1,240s
-20,5.50,Syntax error, (StackOverflowError) compiling at (anglsat/core.clj:30:1). null Full
-30,.50,{false 0.9260000000000007,, true 0.07400000000000004} real 0m32,153s user 0m36,541s
-30,1.00,{false 0.9650000000000007,, true 0.035} real 0m33,503s user 0m38,140s
-30,1.50,{false 1.0000000000000007}, real 0m30,321s user 0m35,189s sys 0m1,117s
-30,2.00,{false 1.0000000000000007}, real 0m32,716s user 0m37,458s sys 0m1,418s
-30,2.50,{false 1.0000000000000007}, real 0m31,512s user 0m36,592s sys 0m1,157s
-30,3.00,{false 1.0000000000000007}, real 0m33,385s user 0m38,490s sys 0m1,195s
-30,3.50,Syntax error, (StackOverflowError) compiling at (anglsat/core.clj:30:1). null Full
-30,4.00,Syntax error, (StackOverflowError) compiling at (anglsat/core.clj:30:1). null Full
-30,4.30,Syntax error, (StackOverflowError) compiling at (anglsat/core.clj:30:1). null Full
-30,5.00,Syntax error, (StackOverflowError) compiling at (anglsat/core.clj:30:1). null Full
-30,5.50,Syntax error, (StackOverflowError) compiling at (anglsat/core.clj:30:1). null Full
-40,.50,{false 0.9740000000000008,, true 0.026} real 0m27,909s user 0m32,730s
-40,1.00,{false 1.0000000000000007}, real 0m29,264s user 0m34,018s sys 0m1,118s
-40,1.50,{false 1.0000000000000007}, real 0m31,690s user 0m35,752s sys 0m1,448s
-40,2.00,{false 1.0000000000000007}, real 0m34,235s user 0m38,606s sys 0m1,593s
-40,2.50,Syntax error, (StackOverflowError) compiling at (anglsat/core.clj:30:1). null Full
-40,3.00,Syntax error, (StackOverflowError) compiling at (anglsat/core.clj:30:1). null Full
-40,3.50,Syntax error, (StackOverflowError) compiling at (anglsat/core.clj:30:1). null Full
-40,4.00,Syntax error, (StackOverflowError) compiling at (anglsat/core.clj:30:1). null Full
-40,4.30,Syntax error, (StackOverflowError) compiling at (anglsat/core.clj:30:1). null Full
-40,5.00,Syntax error, (StackOverflowError) compiling at (anglsat/core.clj:30:1). null Full
-40,5.50,Syntax error, (StackOverflowError) compiling at (anglsat/core.clj:30:1). null Full
-50,1.00,{false 1.0000000000000007}, java.io.IOException: Stream Closed at java.io.FileOutputStream.writeBytes (FileOutputStream.java:-2) 
+20, 1.0, 42.13046431541443, {false 0.912999999999916, true 0.08700000000000167}
+20, 1.0, 40.2965247631073, {false 0.9719999999999095, true 0.028000000000000098}
+20, 1.0, 39.54956865310669, {false 0.9343999999999136, true 0.06560000000000106}
+20, 1.0, 39.805211782455444, {false 0.9153999999999157, true 0.0846000000000016}
+20, 1.0, 39.79381728172302, {false 0.9530999999999116, true 0.046900000000000525}
+20, 1.0, 39.57655906677246, {false 0.912799999999916, true 0.08720000000000168}
+20, 1.0, 40.47383904457092, {false 0.9333999999999137, true 0.06660000000000109}
+20, 1.0, 39.47296929359436, {false 0.9360999999999134, true 0.06390000000000101}
+20, 1.0, 39.10692119598389, {false 0.9296999999999142, true 0.0703000000000012}
+20, 1.0, 39.64725923538208, {false 0.9471999999999122, true 0.052800000000000694}
+20, 1.5, 43.85033845901489, {false 0.9887999999999076, true 0.011200000000000123}
+20, 1.5, 44.63234567642212, {false 0.9747999999999092, true 0.025200000000000115}
+20, 1.5, 44.369752645492554, {false 0.9882999999999077, true 0.011700000000000129}
+20, 1.5, 45.54480767250061, {false 0.9812999999999085, true 0.018700000000000154}
+20, 1.5, 44.14008665084839, {false 0.9799999999999086, true 0.020000000000000146}
+20, 1.5, 44.155285358428955, {false 0.9606999999999107, true 0.03930000000000031}
+20, 1.5, 44.23589110374451, {false 0.9777999999999089, true 0.022200000000000133}
+20, 1.5, 44.0961971282959, {false 0.9804999999999086, true 0.01950000000000015}
+20, 1.5, 44.64736366271973, {false 0.9837999999999082, true 0.01620000000000017}
+20, 1.5, 44.57659029960632, {false 0.9895999999999076, true 0.010400000000000114}
+20, 2.0, 48.86011743545532, {false 0.9864999999999079, true 0.013500000000000149}
+20, 2.0, 49.29857635498047, {false 0.9925999999999072, true 0.00740000000000008}
+20, 2.0, 49.043174266815186, {false 0.9988999999999065, true 0.001100000000000011}
+20, 2.0, 49.29884362220764, {false 0.9930999999999072, true 0.0069000000000000745}
+20, 2.0, 49.22611379623413, {false 0.9968999999999067, true 0.0031000000000000315}
+20, 2.0, 49.43840289115906, {false 0.9920999999999073, true 0.007900000000000086}
+20, 2.0, 53.3092782497406, {false 0.9985999999999066, true 0.0014000000000000136}
+20, 2.0, 50.13298964500427, {false 0.9999999999999064}
+20, 2.0, 50.09878921508789, {false 0.9911999999999074, true 0.008800000000000096}
+20, 2.0, 48.85552430152893, {false 0.9972999999999067, true 0.002700000000000027}
+20, 2.5, 53.25581097602844, {false 0.9999999999999064}
+20, 2.5, 53.19091010093689, {false 0.9999999999999064}
+20, 2.5, 54.07406973838806, {false 0.9999999999999064}
+20, 2.5, 54.341280460357666, {false 0.9993999999999065, true 6.000000000000059E-4}
+20, 2.5, 53.0045108795166, {false 0.9999999999999064}
+20, 2.5, 53.77724862098694, {false 0.9973999999999067, true 0.002600000000000026}
+20, 2.5, 54.078516483306885, {false 0.9937999999999071, true 0.006200000000000067}
+20, 2.5, 54.48008990287781, {false 0.9999999999999064}
+20, 2.5, 53.35361671447754, {false 0.9955999999999069, true 0.004400000000000046}
+20, 2.5, 53.80130076408386, {false 0.9999999999999064}
+20, 3.0, 57.38628959655762, {false 0.9999999999999064}
+20, 3.0, 59.233110666275024, {false 0.9999999999999064}
+20, 3.0, 58.893680810928345, {false 0.994899999999907, true 0.005100000000000054}
+20, 3.0, 58.81779742240906, {false 0.9999999999999064}
+20, 3.0, 59.497785329818726, {false 0.9999999999999064}
+20, 3.0, 59.32054543495178, {false 0.994599999999907, true 0.0054000000000000575}
+20, 3.0, 58.40644955635071, {false 0.9999999999999064}
+20, 3.0, 59.18681049346924, {false 0.9999999999999064}
+20, 3.0, 59.126784324645996, {false 0.9999999999999064}
+20, 3.0, 59.21470403671265, {false 0.9999999999999064}
+20, 3.5, 63.95400595664978, {false 0.9999999999999064}
+20, 3.5, 64.06961107254028, {false 0.9999999999999064}
+20, 3.5, 64.37108564376831, {false 0.9999999999999064}
+20, 3.5, 64.3105719089508, {false 0.9999999999999064}
+20, 3.5, 63.34982204437256, {false 0.9999999999999064}
+20, 3.5, 64.4534924030304, {false 0.9999999999999064}
+20, 3.5, 64.64590334892273, {false 0.9999999999999064}
+20, 3.5, 64.26880764961243, {false 0.9999999999999064}
+20, 3.5, 63.634424686431885, {false 0.9999999999999064}
+20, 3.5, 63.992523431777954, {false 0.9999999999999064}
+20, 4.0, 71.58027720451355, {false 0.9999999999999064}
+20, 4.0, 72.22561311721802, {false 0.9999999999999064}
+20, 4.0, 71.0315272808075, {false 0.9999999999999064}
+20, 4.0, 70.29652786254883, {false 0.9999999999999064}
+20, 4.0, 71.24544048309326, {false 0.9999999999999064}
+20, 4.0, 69.43627095222473, {false 0.9999999999999064}
+20, 4.0, 69.93510484695435, {false 0.9999999999999064}
+20, 4.0, 69.01681661605835, {false 0.9999999999999064}
+20, 4.0, 69.4611759185791, {false 0.9999999999999064}
+20, 4.0, 69.55718183517456, {false 0.9999999999999064}
+20, 4.5, 74.52180361747742, {false 0.9999999999999064}
+20, 4.5, 76.54260635375977, {false 0.9999999999999064}
+20, 4.5, 75.01649832725525, {false 0.9999999999999064}
+20, 4.5, 73.30142521858215, {false 0.9999999999999064}
+20, 4.5, 74.91261720657349, {false 0.9999999999999064}
+20, 4.5, 74.8016140460968, {false 0.9999999999999064}
+20, 4.5, 75.13692951202393, {false 0.9999999999999064}
+20, 4.5, 74.6975109577179, {false 0.9999999999999064}
+20, 4.5, 73.80136752128601, {false 0.9999999999999064}
+20, 4.5, 74.96820735931396, {false 0.9999999999999064}
+20, 5.0, 79.39115023612976, {false 0.9999999999999064}
+20, 5.0, 80.02659153938293, {false 0.9999999999999064}
+20, 5.0, 79.31790208816528, {false 0.9999999999999064}
+20, 5.0, 80.24009037017822, {false 0.9999999999999064}
+20, 5.0, 79.76378512382507, {false 0.9999999999999064}
+20, 5.0, 80.03865051269531, {false 0.9999999999999064}
+20, 5.0, 79.8513035774231, {false 0.9999999999999064}
+20, 5.0, 80.18092656135559, {false 0.9999999999999064}
+20, 5.0, 80.19918513298035, {false 0.9999999999999064}
+20, 5.0, 80.27135014533997, {false 0.9999999999999064}
+20, 5.5, 27.732794523239136, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-1794630999041919432.edn
+20, 5.5, 27.432832956314087, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-749353832049854287.edn
+20, 5.5, 27.58185601234436, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-1607538333419683415.edn
+20, 5.5, 27.906249046325684, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-3324233661194308262.edn
+20, 5.5, 27.605961799621582, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-6012467690245807550.edn
+20, 5.5, 27.712592124938965, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-6865171625815451942.edn
+20, 5.5, 27.63464117050171, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-2654785339758309668.edn
+20, 5.5, 27.487891674041748, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-3058643182903988215.edn
+20, 5.5, 27.524830102920532, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-737204859598222187.edn
+20, 5.5, 27.703919649124146, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-6065128482029548930.edn
+20, 6.0, 27.719737768173218, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-5703660077590798728.edn
+20, 6.0, 27.5550856590271, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-8118477728581909323.edn
+20, 6.0, 27.68401026725769, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-6074684957791515811.edn
+20, 6.0, 27.592952966690063, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-8525675136616498546.edn
+20, 6.0, 27.82293152809143, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-7645464994734387342.edn
+20, 6.0, 27.5413658618927, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-7401424389929287943.edn
+20, 6.0, 27.634475231170654, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-787569540956128978.edn
+20, 6.0, 27.588569402694702, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-5633474804485757208.edn
+20, 6.0, 28.14614176750183, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-5533062688401909182.edn
+20, 6.0, 27.654391288757324, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-2605856207064679337.edn
+20, 6.5, 27.538278102874756, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-3996676412222165255.edn
+20, 6.5, 27.652092218399048, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-5321350739378828124.edn
+20, 6.5, 27.756306171417236, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-4233068301247346364.edn
+20, 6.5, 27.852402687072754, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-330690354615341991.edn
+20, 6.5, 27.53120183944702, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-192368195775786986.edn
+20, 6.5, 28.039768934249878, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-3874311748285142044.edn
+20, 6.5, 27.85727024078369, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-3882364155464570485.edn
+20, 6.5, 27.686139822006226, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-3810850084684679386.edn
+20, 6.5, 27.635369062423706, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-6771513320899287712.edn
+20, 6.5, 27.54428768157959, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-3289628184973982201.edn
+20, 7.0, 27.57407236099243, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-3340436468185549170.edn
+20, 7.0, 27.5720157623291, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-7592498552626099947.edn
+20, 7.0, 27.99132990837097, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-8007247050656680507.edn
+20, 7.0, 27.715751886367798, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-6575157244753790983.edn
+20, 7.0, 27.699293851852417, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-5730368711774130416.edn
+20, 7.0, 27.630531787872314, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-1414055821373308135.edn
+20, 7.0, 27.543851137161255, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-5973950782250493947.edn
+20, 7.0, 27.75085759162903, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-3476481420264142026.edn
+20, 7.0, 27.6756489276886, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-7145585825379936550.edn
+20, 7.0, 27.47216248512268, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-6326942719487724653.edn
+20, 7.5, 27.749900579452515, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-3716488902161052199.edn
+20, 7.5, 27.754093885421753, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-6203024536277235146.edn
+20, 7.5, 27.689621686935425, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-8522388077504659047.edn
+20, 7.5, 27.521304845809937, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-5029109709125777729.edn
+20, 7.5, 27.744069814682007, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-3697141283810271667.edn
+20, 7.5, 27.57570219039917, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-4552512021496930258.edn
+20, 7.5, 27.46262550354004, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-7914933532469620118.edn
+20, 7.5, 27.601070404052734, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-1489580899908901791.edn
+20, 7.5, 27.754502773284912, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-3105475929061369819.edn
+20, 7.5, 27.627854824066162, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-2266521139063728352.edn
+25, 1.0, 44.264394760131836, {false 0.9687999999999098, true 0.03120000000000008}
+25, 1.0, 43.59247875213623, {false 0.9658999999999102, true 0.03410000000000016}
+25, 1.0, 44.107556104660034, {true 0.012500000000000138, false 0.9874999999999078}
+25, 1.0, 43.23202347755432, {false 0.9865999999999079, true 0.013400000000000148}
+25, 1.0, 43.05053377151489, {false 0.9539999999999115, true 0.0460000000000005}
+25, 1.0, 42.9422562122345, {false 0.96709999999991, true 0.032900000000000124}
+25, 1.0, 42.73444366455078, {false 0.9684999999999099, true 0.031500000000000083}
+25, 1.0, 42.318779945373535, {false 0.9331999999999138, true 0.0668000000000011}
+25, 1.0, 43.8045551776886, {false 0.9645999999999103, true 0.035400000000000195}
+25, 1.0, 43.64324593544006, {false 0.9723999999999094, true 0.0276000000000001}
+25, 1.5, 48.83540105819702, {false 0.9883999999999077, true 0.011600000000000128}
+25, 1.5, 49.01334571838379, {false 0.9806999999999085, true 0.01930000000000015}
+25, 1.5, 49.38880014419556, {false 0.9979999999999066, true 0.002000000000000019}
+25, 1.5, 49.51495432853699, {false 0.9919999999999073, true 0.008000000000000087}
+25, 1.5, 48.707749128341675, {false 0.9921999999999073, true 0.007800000000000085}
+25, 1.5, 48.849730014801025, {false 0.9866999999999079, true 0.013300000000000147}
+25, 1.5, 48.82218790054321, {false 0.9684999999999099, true 0.031500000000000083}
+25, 1.5, 50.31486916542053, {false 0.9906999999999074, true 0.009300000000000102}
+25, 1.5, 48.9669554233551, {false 0.9965999999999068, true 0.003400000000000035}
+25, 1.5, 49.18271470069885, {false 0.9890999999999076, true 0.01090000000000012}
+25, 2.0, 54.793728828430176, {false 0.9999999999999064}
+25, 2.0, 55.194639682769775, {false 0.9999999999999064}
+25, 2.0, 55.59179425239563, {false 0.9992999999999065, true 7.000000000000069E-4}
+25, 2.0, 55.5038104057312, {false 0.9999999999999064}
+25, 2.0, 55.50627875328064, {false 0.9996999999999064, true 3.0000000000000296E-4}
+25, 2.0, 54.306185722351074, {false 0.9995999999999065, true 4.000000000000039E-4}
+25, 2.0, 55.663489818573, {false 0.9967999999999068, true 0.0032000000000000327}
+25, 2.0, 55.762489318847656, {false 0.9981999999999066, true 0.0018000000000000173}
+25, 2.0, 55.516220808029175, {false 0.9995999999999065, true 4.000000000000039E-4}
+25, 2.0, 55.77583599090576, {false 0.9969999999999067, true 0.0030000000000000304}
+25, 2.5, 61.91068935394287, {false 0.9999999999999064}
+25, 2.5, 62.230618953704834, {false 0.9999999999999064}
+25, 2.5, 60.662437200546265, {false 0.9999999999999064}
+25, 2.5, 61.67972135543823, {false 0.9999999999999064}
+25, 2.5, 61.04164433479309, {false 0.9999999999999064}
+25, 2.5, 61.79726791381836, {false 0.9999999999999064}
+25, 2.5, 62.08730101585388, {false 0.9999999999999064}
+25, 2.5, 60.97362017631531, {false 0.9999999999999064}
+25, 2.5, 60.48102355003357, {false 0.9999999999999064}
+25, 2.5, 61.463327407836914, {false 0.9999999999999064}
+25, 3.0, 68.86979484558105, {false 0.9999999999999064}
+25, 3.0, 67.74993896484375, {false 0.9999999999999064}
+25, 3.0, 67.56124472618103, {false 0.9999999999999064}
+25, 3.0, 67.44368386268616, {false 0.9999999999999064}
+25, 3.0, 67.32777976989746, {false 0.9999999999999064}
+25, 3.0, 67.71678519248962, {false 0.9999999999999064}
+25, 3.0, 69.84880447387695, {false 0.9999999999999064}
+25, 3.0, 67.74172592163086, {false 0.9999999999999064}
+25, 3.0, 68.08589220046997, {false 0.9999999999999064}
+25, 3.0, 69.52289915084839, {false 0.9999999999999064}
+25, 3.5, 75.31776809692383, {false 0.9999999999999064}
+25, 3.5, 73.18895816802979, {false 0.9999999999999064}
+25, 3.5, 75.90807771682739, {false 0.9999999999999064}
+25, 3.5, 75.6585693359375, {false 0.9999999999999064}
+25, 3.5, 75.99608087539673, {false 0.9999999999999064}
+25, 3.5, 74.62898230552673, {false 0.9999999999999064}
+25, 3.5, 74.51095509529114, {false 0.9999999999999064}
+25, 3.5, 74.82294249534607, {false 0.9999999999999064}
+25, 3.5, 74.90047693252563, {false 0.9999999999999064}
+25, 3.5, 74.37279653549194, {false 0.9999999999999064}
+25, 4.0, 82.9302499294281, {false 0.9999999999999064}
+25, 4.0, 81.63160395622253, {false 0.9999999999999064}
+25, 4.0, 81.95404863357544, {false 0.9999999999999064}
+25, 4.0, 81.42190647125244, {false 0.9999999999999064}
+25, 4.0, 81.79283690452576, {false 0.9999999999999064}
+25, 4.0, 84.0502724647522, {false 0.9999999999999064}
+25, 4.0, 83.04435801506042, {false 0.9999999999999064}
+25, 4.0, 82.18543720245361, {false 0.9999999999999064}
+25, 4.0, 82.22207713127136, {false 0.9999999999999064}
+25, 4.0, 82.27613830566406, {false 0.9999999999999064}
+25, 4.5, 27.943969249725342, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-5964342934928907792.edn
+25, 4.5, 27.805795431137085, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-6923425843585400975.edn
+25, 4.5, 27.57554006576538, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-7048501246031490229.edn
+25, 4.5, 27.629899263381958, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-732109741926618932.edn
+25, 4.5, 27.621612548828125, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-6407081775808257480.edn
+25, 4.5, 27.726184368133545, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-7736582097842842040.edn
+25, 4.5, 27.577178478240967, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-2456735015628641573.edn
+25, 4.5, 27.578725337982178, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-7659065652722864700.edn
+25, 4.5, 27.602667570114136, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-6305917841891618371.edn
+25, 4.5, 27.620911598205566, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-6992674459342399064.edn
+25, 5.0, 27.692493200302124, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-4362729884874184919.edn
+25, 5.0, 28.765394926071167, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-7465295733248464124.edn
+25, 5.0, 27.65671443939209, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-2880068984586024989.edn
+25, 5.0, 27.653260707855225, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-6642748811567666310.edn
+25, 5.0, 27.479432106018066, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-3058244372259763179.edn
+25, 5.0, 27.599254846572876, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-8150426669417226341.edn
+25, 5.0, 27.720963716506958, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-8882494477126563721.edn
+25, 5.0, 27.817724227905273, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-4116987762066080465.edn
+25, 5.0, 27.756459712982178, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-4847638646938144308.edn
+25, 5.0, 27.831948041915894, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-9131083994401823617.edn
+25, 5.5, 27.617842435836792, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-9035399720931457799.edn
+25, 5.5, 27.770457983016968, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-5897923532520830318.edn
+25, 5.5, 27.77188229560852, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-532544398182909819.edn
+25, 5.5, 27.53736686706543, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-1302679410608484183.edn
+25, 5.5, 27.504981994628906, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-7793717145657270591.edn
+25, 5.5, 27.70827865600586, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-4308722435818248659.edn
+25, 5.5, 28.01138973236084, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-5588510249127102315.edn
+25, 5.5, 27.895673274993896, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-5764409929345928440.edn
+25, 5.5, 27.744542360305786, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-8195746525628322206.edn
+25, 5.5, 27.69391417503357, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-8996993424208842172.edn
+25, 6.0, 28.078951835632324, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-8395185883608606050.edn
+25, 6.0, 27.637775897979736, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-7607943488283778041.edn
+25, 6.0, 27.771604299545288, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-8303635770222745106.edn
+25, 6.0, 27.6128830909729, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-6631399870246376251.edn
+25, 6.0, 27.852429151535034, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-8273016470143308047.edn
+25, 6.0, 27.72169327735901, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-479466199318149008.edn
+25, 6.0, 27.737032651901245, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-5680114921909627799.edn
+25, 6.0, 27.791910648345947, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-2347832267478177416.edn
+25, 6.0, 27.71538496017456, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-6889632406026229446.edn
+25, 6.0, 27.955082654953003, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-6540062814155711841.edn
+25, 6.5, 27.636295080184937, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-4725446584494005299.edn
+25, 6.5, 27.656113386154175, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-2105989532703731066.edn
+25, 6.5, 27.582040309906006, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-5946988488588055919.edn
+25, 6.5, 27.69620418548584, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-2080987149488968515.edn
+25, 6.5, 27.80252981185913, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-9022457570609850738.edn
+25, 6.5, 27.519558668136597, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-7652508850023289893.edn
+25, 6.5, 27.957855224609375, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-6473754294340319266.edn
+25, 6.5, 27.98144030570984, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-2594808153048478201.edn
+25, 6.5, 28.18371033668518, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-7437537161194844688.edn
+25, 6.5, 28.29934573173523, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-7207393630914213667.edn
+25, 7.0, 27.6301748752594, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-2373779667791642834.edn
+25, 7.0, 27.811042547225952, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-5911051650832952969.edn
+25, 7.0, 27.777701377868652, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-5665972410040292469.edn
+25, 7.0, 27.895339727401733, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-8681430950286857907.edn
+25, 7.0, 27.611353874206543, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-1479192529431623652.edn
+25, 7.0, 27.927993535995483, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-3690926923263021654.edn
+25, 7.0, 27.80325222015381, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-4569135052036359265.edn
+25, 7.0, 27.775423526763916, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-6074333423812702994.edn
+25, 7.0, 28.848095893859863, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-8297281777056607722.edn
+25, 7.0, 28.0231511592865, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-7633400557768460649.edn
+25, 7.5, 27.886396169662476, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-2724188428371020403.edn
+25, 7.5, 27.85071110725403, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-6087468273602663821.edn
+25, 7.5, 27.709588527679443, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-3188441868125915691.edn
+25, 7.5, 27.902820825576782, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-3123902703151510098.edn
+25, 7.5, 27.99924087524414, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-8511994052872122744.edn
+25, 7.5, 28.17386794090271, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-209551540450151319.edn
+25, 7.5, 27.76142978668213, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-5867580781236290270.edn
+25, 7.5, 27.532302379608154, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-2658079843870851294.edn
+25, 7.5, 27.627521514892578, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-7586385667752384010.edn
+25, 7.5, 28.193426847457886, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-1322911863223533836.edn
+30, 1.0, 47.74762797355652, {false 0.9873999999999078, true 0.012600000000000139}
+30, 1.0, 47.6448392868042, {false 0.9785999999999088, true 0.021400000000000138}
+30, 1.0, 47.14676284790039, {false 0.9938999999999071, true 0.0061000000000000654}
+30, 1.0, 46.74474477767944, {false 0.9905999999999074, true 0.009400000000000103}
+30, 1.0, 48.02177309989929, {false 0.9827999999999083, true 0.017200000000000163}
+30, 1.0, 48.57962727546692, {false 0.9775999999999089, true 0.02240000000000013}
+30, 1.0, 47.30699443817139, {true 0.04040000000000034, false 0.9595999999999109}
+30, 1.0, 47.297261238098145, {false 0.9864999999999079, true 0.013500000000000149}
+30, 1.0, 47.56266951560974, {false 0.9604999999999108, true 0.03950000000000031}
+30, 1.0, 47.297821283340454, {false 0.985899999999908, true 0.014100000000000156}
+30, 1.5, 54.41123867034912, {false 0.9985999999999066, true 0.0014000000000000136}
+30, 1.5, 55.55419731140137, {false 0.9956999999999069, true 0.004300000000000045}
+30, 1.5, 55.06854748725891, {false 0.9999999999999064}
+30, 1.5, 55.0770308971405, {false 0.9987999999999065, true 0.0012000000000000118}
+30, 1.5, 54.927496671676636, {false 0.9993999999999065, true 6.000000000000059E-4}
+30, 1.5, 55.30098223686218, {false 0.9963999999999068, true 0.003600000000000037}
+30, 1.5, 54.79319953918457, {false 0.9940999999999071, true 0.005900000000000063}
+30, 1.5, 53.96299600601196, {false 0.9993999999999065, true 6.000000000000059E-4}
+30, 1.5, 54.588860273361206, {false 0.9963999999999068, true 0.003600000000000037}
+30, 1.5, 54.78914928436279, {false 0.9956999999999069, true 0.004300000000000045}
+30, 2.0, 67.06547594070435, {false 0.9999999999999064}
+30, 2.0, 64.49791741371155, {false 0.9999999999999064}
+30, 2.0, 61.97190475463867, {false 0.9988999999999065, true 0.001100000000000011}
+30, 2.0, 62.52558255195618, {false 0.9992999999999065, true 7.000000000000069E-4}
+30, 2.0, 62.12690591812134, {false 0.9999999999999064}
+30, 2.0, 62.59017205238342, {false 0.9999999999999064}
+30, 2.0, 63.991146087646484, {false 0.9999999999999064}
+30, 2.0, 62.60611152648926, {false 0.9919999999999073, true 0.008000000000000087}
+30, 2.0, 61.883687257766724, {false 0.9999999999999064}
+30, 2.0, 61.92419481277466, {false 0.9999999999999064}
+30, 2.5, 70.92786169052124, {false 0.9999999999999064}
+30, 2.5, 70.21130609512329, {false 0.9999999999999064}
+30, 2.5, 70.12432789802551, {false 0.9999999999999064}
+30, 2.5, 69.75575685501099, {false 0.9999999999999064}
+30, 2.5, 70.87156009674072, {false 0.9999999999999064}
+30, 2.5, 70.31540894508362, {false 0.9999999999999064}
+30, 2.5, 70.34729313850403, {false 0.9999999999999064}
+30, 2.5, 71.48587775230408, {false 0.9999999999999064}
+30, 2.5, 70.4144127368927, {false 0.9999999999999064}
+30, 2.5, 70.91763806343079, {false 0.9999999999999064}
+30, 3.0, 79.84710216522217, {false 0.9999999999999064}
+30, 3.0, 79.7323260307312, {false 0.9999999999999064}
+30, 3.0, 78.2743513584137, {false 0.9999999999999064}
+30, 3.0, 78.82060670852661, {false 0.9999999999999064}
+30, 3.0, 81.33374953269958, {false 0.9999999999999064}
+30, 3.0, 81.25619459152222, {false 0.9999999999999064}
+30, 3.0, 78.83328056335449, {false 0.9999999999999064}
+30, 3.0, 80.12954473495483, {false 0.9999999999999064}
+30, 3.0, 78.91005945205688, {false 0.9999999999999064}
+30, 3.0, 79.79645133018494, {false 0.9999999999999064}
+30, 3.5, 31.60255479812622, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-7334499360433610185.edn
+30, 3.5, 29.391801357269287, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-1420166224550093807.edn
+30, 3.5, 27.774054765701294, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-6484883879569250040.edn
+30, 3.5, 31.518417358398438, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-3876169808203304785.edn
+30, 3.5, 29.60845375061035, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-7088476040770704753.edn
+30, 3.5, 32.60174202919006, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-4758663586255863843.edn
+30, 3.5, 27.90520668029785, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-2709934280348528496.edn
+30, 3.5, 27.765827894210815, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-9172251934997264293.edn
+30, 3.5, 28.096039056777954, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-6325645787514511549.edn
+30, 3.5, 35.823153257369995, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-6842195627948939868.edn
+30, 4.0, 27.606333255767822, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-7230781859727391699.edn
+30, 4.0, 27.701942205429077, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-7311714378847847756.edn
+30, 4.0, 27.571621417999268, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-2165728890830604128.edn
+30, 4.0, 27.609456062316895, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-5382302643933721040.edn
+30, 4.0, 36.53084421157837, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-9124189722927564596.edn
+30, 4.0, 27.691482543945312, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-580115180278601681.edn
+30, 4.0, 31.835984706878662, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-6941187000723638787.edn
+30, 4.0, 27.63228464126587, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-8161508580591473033.edn
+30, 4.0, 29.19614052772522, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-6504207167210556885.edn
+30, 4.0, 29.17036485671997, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-7509467679099847492.edn
+30, 4.5, 27.636401176452637, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-2237014889675043169.edn
+30, 4.5, 27.901891946792603, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-4138911131170709801.edn
+30, 4.5, 27.51535964012146, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-8100013336175904491.edn
+30, 4.5, 27.718810319900513, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-8866897482129041183.edn
+30, 4.5, 31.03429412841797, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-3499858588209522960.edn
+30, 4.5, 27.520397186279297, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-8449626998811511653.edn
+30, 4.5, 28.805386066436768, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-1164995338867841960.edn
+30, 4.5, 27.55030107498169, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-5481590941369499852.edn
+30, 4.5, 27.733288049697876, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-5370535981232295381.edn
+30, 4.5, 33.055638551712036, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-2287081025196798365.edn
+30, 5.0, 28.81729555130005, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-9070392008890239435.edn
+30, 5.0, 38.5072238445282, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-5529930500235802663.edn
+30, 5.0, 27.954458713531494, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-1851356905959026392.edn
+30, 5.0, 28.987646102905273, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-1425809283374327761.edn
+30, 5.0, 27.593111276626587, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-3162464307318790605.edn
+30, 5.0, 30.709001302719116, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-1941997682500801980.edn
+30, 5.0, 27.636394500732422, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-8640180875022288908.edn
+30, 5.0, 30.992518663406372, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-7392736936745384639.edn
+30, 5.0, 27.674638509750366, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-4339216599261998071.edn
+30, 5.0, 28.22701096534729, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-4040934889656272953.edn
+30, 5.5, 27.6311092376709, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-4530284216034493100.edn
+30, 5.5, 27.648895263671875, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-5085563962532041062.edn
+30, 5.5, 27.418118238449097, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-8770293339866629862.edn
+30, 5.5, 29.08220887184143, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-3878872157065471785.edn
+30, 5.5, 33.670894384384155, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-2238151026390394267.edn
+30, 5.5, 31.721455574035645, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-1228780116183533620.edn
+30, 5.5, 27.77153778076172, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-8344996011199818457.edn
+30, 5.5, 27.9864501953125, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-2144555238053500018.edn
+30, 5.5, 27.624138593673706, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-907183356179154989.edn
+30, 5.5, 28.922157049179077, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-5206800791522413055.edn
+30, 6.0, 32.66635203361511, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-9067128854730592543.edn
+30, 6.0, 29.145586729049683, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-6953356683827554985.edn
+30, 6.0, 27.586352348327637, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-4524976977808621264.edn
+30, 6.0, 27.735405445098877, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-1693276210535792588.edn
+30, 6.0, 28.96630311012268, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-3433802910028274381.edn
+30, 6.0, 27.87703824043274, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-6004144653342086580.edn
+30, 6.0, 27.65842866897583, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-4779938023470189501.edn
+30, 6.0, 27.63540816307068, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-2288192737250170210.edn
+30, 6.0, 27.63563370704651, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-8964754167592171310.edn
+30, 6.0, 27.730992078781128, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-3085232461774557398.edn
+30, 6.5, 31.015992879867554, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-3623045615921485400.edn
+30, 6.5, 32.57935643196106, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-6130767610279607227.edn
+30, 6.5, 29.02732563018799, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-3042218220967967037.edn
+30, 6.5, 32.5814847946167, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-6949354661886300561.edn
+30, 6.5, 28.954031944274902, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-6865670860938674360.edn
+30, 6.5, 27.61514186859131, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-4983297606561869746.edn
+30, 6.5, 27.902162313461304, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-2974597599614682433.edn
+30, 6.5, 30.0015766620636, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-875997585827096627.edn
+30, 6.5, 29.051600694656372, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-3011271603586396989.edn
+30, 6.5, 27.759891271591187, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-4565570761344743919.edn
+30, 7.0, 29.194039583206177, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-6473740934532684790.edn
+30, 7.0, 29.340121030807495, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-265677871725989585.edn
+30, 7.0, 28.90287470817566, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-3185167229607549412.edn
+30, 7.0, 27.673574447631836, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-3476195662146691548.edn
+30, 7.0, 29.357445240020752, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-5573298746350779974.edn
+30, 7.0, 28.87982702255249, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-6865760878909814479.edn
+30, 7.0, 27.72162365913391, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-5351106301220495838.edn
+30, 7.0, 29.26761746406555, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-4105510267656070897.edn
+30, 7.0, 27.500652551651, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-1742212766537676335.edn
+30, 7.0, 27.644533395767212, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-7797776344802550149.edn
+30, 7.5, 28.887230396270752, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-3749066034921249360.edn
+30, 7.5, 32.71352219581604, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-1889639788314566602.edn
+30, 7.5, 27.53808879852295, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-9112385565088870490.edn
+30, 7.5, 29.205031156539917, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-8262677631443659259.edn
+30, 7.5, 33.2735333442688, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-2288853113241902406.edn
+30, 7.5, 29.05218267440796, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-8798559340665829611.edn
+30, 7.5, 29.50414800643921, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-1019437133814814718.edn
+30, 7.5, 29.153149843215942, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-8614805279455695519.edn
+30, 7.5, 28.93510675430298, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-70906180067246371.edn
+30, 7.5, 29.219264268875122, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-101085881411825126.edn
+35, 1.0, 50.00472450256348, {false 0.9895999999999076, true 0.010400000000000114}
+35, 1.0, 50.08341455459595, {false 0.9999999999999064}
+35, 1.0, 50.715054988861084, {false 0.9930999999999072, true 0.0069000000000000745}
+35, 1.0, 50.82783913612366, {false 0.9921999999999073, true 0.007800000000000085}
+35, 1.0, 50.05126976966858, {false 0.9968999999999067, true 0.0031000000000000315}
+35, 1.0, 49.66310977935791, {false 0.994399999999907, true 0.00560000000000006}
+35, 1.0, 49.98424196243286, {false 0.9896999999999075, true 0.010300000000000113}
+35, 1.0, 50.27653527259827, {false 0.9835999999999082, true 0.016400000000000168}
+35, 1.0, 50.57834768295288, {false 0.9824999999999083, true 0.01750000000000016}
+35, 1.0, 50.5650851726532, {false 0.9885999999999077, true 0.011400000000000125}
+35, 1.5, 58.46087098121643, {false 0.9991999999999065, true 8.00000000000008E-4}
+35, 1.5, 60.20108723640442, {false 0.9996999999999064, true 3.0000000000000296E-4}
+35, 1.5, 58.38823866844177, {false 0.9968999999999067, true 0.0031000000000000315}
+35, 1.5, 59.308122634887695, {false 0.9969999999999067, true 0.0030000000000000304}
+35, 1.5, 58.36406183242798, {false 0.9999999999999064}
+35, 1.5, 58.473575592041016, {false 0.9999999999999064}
+35, 1.5, 58.05151152610779, {false 0.9952999999999069, true 0.00470000000000005}
+35, 1.5, 58.110249519348145, {false 0.9999999999999064}
+35, 1.5, 58.79347848892212, {false 0.9996999999999064, true 3.0000000000000296E-4}
+35, 1.5, 58.81295132637024, {false 0.9956999999999069, true 0.004300000000000045}
+35, 2.0, 76.26962065696716, {false 0.9999999999999064}
+35, 2.0, 69.86978673934937, {false 0.9999999999999064}
+35, 2.0, 68.09849309921265, {false 0.9999999999999064}
+35, 2.0, 68.81646513938904, {false 0.9999999999999064}
+35, 2.0, 80.7719931602478, {false 0.9999999999999064}
+35, 2.0, 71.51922750473022, {false 0.9999999999999064}
+35, 2.0, 68.08592200279236, {false 0.9999999999999064}
+35, 2.0, 69.73966312408447, {false 0.9999999999999064}
+35, 2.0, 75.49761414527893, {false 0.9999999999999064}
+35, 2.0, 77.42739629745483, {false 0.9999999999999064}
+35, 2.5, 82.81512975692749, {false 0.9999999999999064}
+35, 2.5, 79.88045406341553, {false 0.9999999999999064}
+35, 2.5, 79.36849331855774, {false 0.9999999999999064}
+35, 2.5, 79.27861261367798, {false 0.9999999999999064}
+35, 2.5, 81.83607292175293, {false 0.9999999999999064}
+35, 2.5, 83.99147915840149, {false 0.9999999999999064}
+35, 2.5, 85.09890031814575, {false 0.9999999999999064}
+35, 2.5, 78.47360587120056, {false 0.9999999999999064}
+35, 2.5, 83.9721109867096, {false 0.9999999999999064}
+35, 2.5, 80.14092254638672, {false 0.9999999999999064}
+35, 3.0, 28.62389826774597, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-3884916334282710359.edn
+35, 3.0, 28.675727605819702, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-5819080556980568263.edn
+35, 3.0, 30.793739557266235, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-2502897248686064428.edn
+35, 3.0, 32.31833052635193, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-9188043442839382385.edn
+35, 3.0, 28.841182231903076, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-8714244332328453870.edn
+35, 3.0, 29.682982444763184, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-589333340919607802.edn
+35, 3.0, 28.56373143196106, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-82628928011440272.edn
+35, 3.0, 32.02878451347351, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-8254770314424585201.edn
+35, 3.0, 30.40599274635315, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-3867114227997371319.edn
+35, 3.0, 28.625389099121094, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-860365875316225980.edn
+35, 3.5, 28.637964725494385, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-7454638925705010044.edn
+35, 3.5, 30.937289714813232, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-9005565207819926412.edn
+35, 3.5, 30.29075574874878, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-486259752633509022.edn
+35, 3.5, 28.963920831680298, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-6876924140362907671.edn
+35, 3.5, 30.475773334503174, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-870796863745650307.edn
+35, 3.5, 28.488158226013184, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-4705019229955514745.edn
+35, 3.5, 34.989795446395874, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-4193694033683406869.edn
+35, 3.5, 44.39099192619324, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-6334521154107671792.edn
+35, 3.5, 35.44275164604187, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-4818423876128185736.edn
+35, 3.5, 29.068832635879517, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-8335127868154174474.edn
+35, 4.0, 33.15234375, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-5742515345441490070.edn
+35, 4.0, 48.12412905693054, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-6130201291531292484.edn
+35, 4.0, 28.97904062271118, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-157445659498410494.edn
+35, 4.0, 28.912622213363647, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-8002992436074867913.edn
+35, 4.0, 32.411062240600586, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-3968078359458302342.edn
+35, 4.0, 38.737711906433105, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-910159590848681253.edn
+35, 4.0, 31.07084321975708, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-1419530023985083575.edn
+35, 4.0, 28.39991521835327, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-649542153367939157.edn
+35, 4.0, 31.45804214477539, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-307207569205611129.edn
+35, 4.0, 28.456445693969727, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-5038846185358282888.edn
+35, 4.5, 28.556915760040283, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-1931002706568745626.edn
+35, 4.5, 28.545352458953857, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-4863174894693590015.edn
+35, 4.5, 28.65568733215332, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-8570545031780007460.edn
+35, 4.5, 28.572932958602905, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-1464357105032689455.edn
+35, 4.5, 28.320401430130005, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-8820511096547946340.edn
+35, 4.5, 28.48124670982361, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-3360066700075877863.edn
+35, 4.5, 32.391467332839966, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-3038961326691457528.edn
+35, 4.5, 28.443806409835815, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-5977075283079674176.edn
+35, 4.5, 28.300451040267944, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-1736972862628320476.edn
+35, 4.5, 28.70520544052124, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-3424696055546287751.edn
+35, 5.0, 28.38626217842102, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-1587351074416352113.edn
+35, 5.0, 28.376725912094116, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-2544247785237590794.edn
+35, 5.0, 28.35706663131714, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-3230348636205087562.edn
+35, 5.0, 28.49457883834839, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-7753179057926816673.edn
+35, 5.0, 28.360652446746826, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-5758356359265666497.edn
+35, 5.0, 28.365601539611816, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-6183625913580506374.edn
+35, 5.0, 32.457172870635986, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-1132094780199975838.edn
+35, 5.0, 30.21977400779724, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-6236433225365305248.edn
+35, 5.0, 29.244593858718872, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-7279387064068324095.edn
+35, 5.0, 32.29757881164551, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-6485614475988783522.edn
+35, 5.5, 28.671154499053955, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-75571279548696037.edn
+35, 5.5, 30.05876851081848, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-4999306390973425119.edn
+35, 5.5, 28.633658170700073, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-248238676786173388.edn
+35, 5.5, 32.34447622299194, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-7885981610472702360.edn
+35, 5.5, 28.55693793296814, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-3831181533749778699.edn
+35, 5.5, 28.4904727935791, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-1466686297160773806.edn
+35, 5.5, 28.58204197883606, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-6976947071455858150.edn
+35, 5.5, 32.75475549697876, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-544273684687536139.edn
+35, 5.5, 28.609816074371338, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-5442665383899826003.edn
+35, 5.5, 30.906593561172485, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-5518268794955333545.edn
+35, 6.0, 32.467506885528564, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-3740501786988282942.edn
+35, 6.0, 28.533161878585815, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-2935739284441239704.edn
+35, 6.0, 28.66262650489807, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-9984141258339932.edn
+35, 6.0, 28.55048441886902, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-6643790281296083047.edn
+35, 6.0, 28.574137210845947, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-192303098597365204.edn
+35, 6.0, 28.663471460342407, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-6345368783888151893.edn
+35, 6.0, 28.56377387046814, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-7980304109334456756.edn
+35, 6.0, 32.17757701873779, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-9170499700002183589.edn
+35, 6.0, 28.521950244903564, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-7009270038225866497.edn
+35, 6.0, 27.66361355781555, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-1740488056242963865.edn
+35, 6.5, 28.629185676574707, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-543428597525292322.edn
+35, 6.5, 30.753203868865967, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-7245966893310723739.edn
+35, 6.5, 31.663344144821167, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-9175299479156923171.edn
+35, 6.5, 28.573065280914307, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-1034191594167061682.edn
+35, 6.5, 28.743988513946533, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-2728035612010194684.edn
+35, 6.5, 28.732768774032593, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-6845412224816564290.edn
+35, 6.5, 28.66053009033203, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-6552967856190014055.edn
+35, 6.5, 32.23253917694092, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-2710549506791066463.edn
+35, 6.5, 28.556849002838135, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-3944543694138307361.edn
+35, 6.5, 28.626096725463867, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-352371644002950319.edn
+35, 7.0, 28.490766048431396, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-1370537099036159528.edn
+35, 7.0, 27.690539836883545, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-3649444203118784850.edn
+35, 7.0, 28.486937761306763, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-7804622646301611995.edn
+35, 7.0, 28.40668487548828, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-4324717120822133731.edn
+35, 7.0, 33.185593605041504, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-1934893892124098177.edn
+35, 7.0, 28.696657419204712, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-8656919517910248625.edn
+35, 7.0, 28.924598932266235, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-7997317647773169615.edn
+35, 7.0, 28.2575044631958, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-6488468839877702414.edn
+35, 7.0, 30.012138605117798, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-7656829598399524758.edn
+35, 7.0, 28.533987283706665, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-350833571602512656.edn
+35, 7.5, 32.20291304588318, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-9151950187070671862.edn
+35, 7.5, 28.55026125907898, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-4043139617095645376.edn
+35, 7.5, 28.681896686553955, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-1328498232869179042.edn
+35, 7.5, 28.515734910964966, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-230161886361544539.edn
+35, 7.5, 28.822986602783203, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-5942285950924380589.edn
+35, 7.5, 32.64852786064148, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-8427143004881515252.edn
+35, 7.5, 28.448471069335938, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-9182015078162256477.edn
+35, 7.5, 27.337403774261475, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-6831129465885136523.edn
+35, 7.5, 28.365952968597412, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-1717648397534965593.edn
+35, 7.5, 28.414440870285034, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-1857551876579454277.edn
+
+40, 1.0, 55.08070635795593, {false 0.9842999999999081, true 0.015700000000000172}
+40, 1.0, 54.28730273246765, {false 0.9996999999999064, true 3.0000000000000296E-4}
+40, 1.0, 52.6711049079895, {false 0.994199999999907, true 0.005800000000000062}
+40, 1.0, 52.84346055984497, {false 0.9965999999999068, true 0.003400000000000035}
+40, 1.0, 53.866793394088745, {false 0.9969999999999067, true 0.0030000000000000304}
+40, 1.0, 53.91521883010864, {false 0.9924999999999072, true 0.007500000000000081}
+40, 1.0, 54.42994976043701, {false 0.9977999999999067, true 0.0022000000000000214}
+40, 1.0, 54.111724615097046, {false 0.9876999999999078, true 0.012300000000000135}
+40, 1.0, 52.99284839630127, {false 0.9912999999999074, true 0.008700000000000095}
+40, 1.0, 53.288915157318115, {false 0.9977999999999067, true 0.0022000000000000214}
+40, 1.5, 64.56004238128662, {false 0.9989999999999065, true 0.00100000000000001}
+40, 1.5, 65.20912170410156, {false 0.9999999999999064}
+40, 1.5, 64.48496317863464, {false 0.9999999999999064}
+40, 1.5, 67.42808651924133, {false 0.9999999999999064}
+40, 1.5, 65.66716074943542, {false 0.9999999999999064}
+40, 1.5, 66.49410843849182, {false 0.9999999999999064}
+40, 1.5, 81.01367974281311, {false 0.9999999999999064}
+40, 1.5, 67.86060905456543, {false 0.9999999999999064}
+40, 1.5, 64.41150212287903, {false 0.9999999999999064}
+40, 1.5, 69.78295493125916, {false 0.9999999999999064}
+40, 2.0, 78.96222352981567, {false 0.9999999999999064}
+40, 2.0, 85.99045181274414, {false 0.9999999999999064}
+40, 2.0, 80.40286660194397, {false 0.9999999999999064}
+40, 2.0, 89.30607008934021, {false 0.9999999999999064}
+40, 2.0, 86.20870566368103, {false 0.9999999999999064}
+40, 2.0, 81.28425574302673, {false 0.9999999999999064}
+40, 2.0, 82.72823905944824, {false 0.9999999999999064}
+40, 2.0, 83.28315138816833, {false 0.9999999999999064}
+40, 2.0, 83.21271753311157, {false 0.9999999999999064}
+40, 2.0, 80.80151724815369, {false 0.9999999999999064}
+40, 2.5, 38.05406904220581, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-1249365853553467748.edn
+40, 2.5, 35.49582815170288, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-6400158683721340989.edn
+40, 2.5, 29.4319486618042, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-6107917315444983065.edn
+40, 2.5, 29.720539331436157, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-5506055423929735977.edn
+40, 2.5, 40.85594820976257, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-2724114240555785247.edn
+40, 2.5, 34.717304944992065, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-339409631113917754.edn
+40, 2.5, 30.277994632720947, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-7984435969363954046.edn
+40, 2.5, 31.489004373550415, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-4809586198967255873.edn
+40, 2.5, 28.52358651161194, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-1997470332037828145.edn
+40, 2.5, 28.51802372932434, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-3702647037645946077.edn
+40, 3.0, 32.450565814971924, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-887068973457877861.edn
+40, 3.0, 33.10439586639404, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-3390943991494371832.edn
+40, 3.0, 32.6359326839447, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-8065941820835444325.edn
+40, 3.0, 28.94600248336792, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-1719905097443657295.edn
+40, 3.0, 29.168581247329712, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-6966680217353107075.edn
+40, 3.0, 28.83132815361023, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-5607247364250891564.edn
+40, 3.0, 32.203693866729736, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-5474159141202145321.edn
+40, 3.0, 33.82766103744507, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-4666429251438481972.edn
+40, 3.0, 32.07442927360535, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-7065774195978632357.edn
+40, 3.0, 35.60386276245117, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-834387250704870807.edn
+40, 3.5, 28.76118040084839, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-1970066660233763754.edn
+40, 3.5, 32.6137056350708, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-4711013059330552156.edn
+40, 3.5, 28.737658739089966, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-8728587631642499139.edn
+40, 3.5, 35.919513463974, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-3766060064130507078.edn
+40, 3.5, 28.916747331619263, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-5482872855243431698.edn
+40, 3.5, 32.552772998809814, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-4917523957704798837.edn
+40, 3.5, 28.9303777217865, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-8693824013207773335.edn
+40, 3.5, 29.960068702697754, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-8140598911061286207.edn
+40, 3.5, 29.383917331695557, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-2518141279714684654.edn
+40, 3.5, 29.838134765625, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-8499236698819216547.edn
+40, 4.0, 35.51746463775635, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-7986610599638912703.edn
+40, 4.0, 31.080891609191895, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-5817738594457997605.edn
+40, 4.0, 35.27809238433838, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-3918858414570818020.edn
+40, 4.0, 36.74044919013977, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-5013961283059989768.edn
+40, 4.0, 34.79440784454346, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-4820923025317308744.edn
+40, 4.0, 37.718199014663696, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-5716520147461044606.edn
+40, 4.0, 35.77160406112671, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-2752458498710793917.edn
+40, 4.0, 38.87896943092346, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-5245421882130906254.edn
+40, 4.0, 35.989041805267334, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-8850164187576968897.edn
+40, 4.0, 36.20417594909668, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-8866678448762055242.edn
+40, 4.5, 36.49707841873169, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-3623327577841139133.edn
+40, 4.5, 39.68116497993469, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-3622120371454025627.edn
+40, 4.5, 29.346068859100342, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-6603599655967383648.edn
+40, 4.5, 28.860580682754517, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-9038190856716335267.edn
+40, 4.5, 28.527815341949463, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-2392476513140219339.edn
+40, 4.5, 28.51067543029785, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-6725842184671731657.edn
+40, 4.5, 32.807270526885986, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-6114714243675904098.edn
+40, 4.5, 27.683499336242676, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-7288048197047027109.edn
+40, 4.5, 28.494176626205444, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-2453228963096514899.edn
+40, 4.5, 28.89356780052185, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-7070912151444719554.edn
+40, 5.0, 28.57997703552246, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-8601512759351284761.edn
+40, 5.0, 28.679898500442505, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-141523833479534629.edn
+40, 5.0, 32.07032084465027, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-2472259391981572229.edn
+40, 5.0, 28.47661542892456, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-4918168544227029728.edn
+40, 5.0, 32.2917754650116, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-8128161806628348984.edn
+40, 5.0, 32.67426824569702, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-6304284719289895118.edn
+40, 5.0, 28.501145124435425, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-8034222214593898118.edn
+40, 5.0, 28.62209677696228, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-8893469232638211264.edn
+40, 5.0, 28.58651638031006, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-1700577010551181992.edn
+40, 5.0, 28.853090524673462, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-2704497605885288744.edn
+40, 5.5, 29.06766986846924, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-3031101510986194065.edn
+40, 5.5, 29.339723587036133, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-5982771034391259890.edn
+40, 5.5, 29.310983896255493, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-5185487614832503010.edn
+40, 5.5, 29.35993504524231, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-6113269342523931724.edn
+40, 5.5, 28.922972202301025, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-4597829071618513652.edn
+40, 5.5, 36.600765228271484, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-6379179615837309965.edn
+40, 5.5, 28.825352907180786, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-1906807607769202677.edn
+40, 5.5, 28.876386165618896, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-7041968111535631957.edn
+40, 5.5, 29.77310562133789, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-6025571091809248622.edn
+40, 5.5, 29.254289150238037, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-610625102016318739.edn
+40, 6.0, 29.46834373474121, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-1066349603659409322.edn
+40, 6.0, 29.45636558532715, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-8548855654083390175.edn
+40, 6.0, 28.888684272766113, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-776108251864490918.edn
+40, 6.0, 28.539030075073242, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-5630059507810287391.edn
+40, 6.0, 28.46643877029419, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-707490728033542346.edn
+40, 6.0, 32.41689324378967, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-3320460880946795356.edn
+40, 6.0, 28.501789093017578, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-2484520943456745368.edn
+40, 6.0, 34.60783410072327, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-8919699696442962027.edn
+40, 6.0, 28.664501190185547, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-1085247416977122530.edn
+40, 6.0, 28.931971073150635, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-9063663945435767909.edn
+40, 6.5, 27.806989669799805, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-4594106797451136018.edn
+40, 6.5, 28.524264097213745, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-433173197181265257.edn
+40, 6.5, 28.561306715011597, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-1980757975190565489.edn
+40, 6.5, 28.425762176513672, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-3054742669661175436.edn
+40, 6.5, 32.544172048568726, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-336955352272222723.edn
+40, 6.5, 28.883419036865234, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-7355574493723889847.edn
+40, 6.5, 32.745392084121704, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-705623877616612933.edn
+40, 6.5, 42.137725830078125, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-4286313885551154460.edn
+40, 6.5, 38.95124530792236, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-5496232399865354004.edn
+40, 6.5, 30.73203992843628, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-6405430288663022012.edn
+40, 7.0, 35.88777828216553, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-2783847060416792947.edn
+40, 7.0, 34.84955716133118, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-8200287088644612570.edn
+40, 7.0, 45.91568875312805, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-2665462481603054970.edn
+45, 1.0, 58.72322106361389, {false 0.9993999999999065, true 6.000000000000059E-4}
+45, 1.0, 57.79459762573242, {false 0.9995999999999065, true 4.000000000000039E-4}
+45, 1.0, 57.73654508590698, {false 0.9979999999999066, true 0.002000000000000019}
+45, 1.0, 56.995522022247314, {false 0.994699999999907, true 0.005300000000000056}
+45, 1.0, 57.49507808685303, {false 0.9999999999999064}
+45, 1.0, 56.77747893333435, {false 0.9890999999999076, true 0.01090000000000012}
+45, 1.0, 57.894492626190186, {false 0.9972999999999067, true 0.002700000000000027}
+45, 1.0, 57.62287902832031, {false 0.9998999999999064, true 1.0000000000000098E-4}
+45, 1.0, 57.69342565536499, {false 0.9934999999999071, true 0.00650000000000007}
+45, 1.0, 57.856029987335205, {false 0.9999999999999064}
+45, 1.5, 72.2836332321167, {false 0.9999999999999064}
+45, 1.5, 76.03869247436523, {false 0.9999999999999064}
+45, 1.5, 74.54054188728333, {false 0.9999999999999064}
+45, 1.5, 80.30746293067932, {false 0.9999999999999064}
+45, 1.5, 82.80187201499939, {false 0.9999999999999064}
+45, 1.5, 82.47176241874695, {false 0.9999999999999064}
+45, 1.5, 75.05813598632812, {false 0.9999999999999064}
+45, 1.5, 80.94921064376832, {false 0.9999999999999064}
+45, 1.5, 85.94345264376831, {false 0.9999999999999064}
+45, 1.5, 81.1236584974888, {false 0.9999999999999064}
+45, 2.0, 79.49269485473633, {false 1.0000000000001534}
+45, 2.0, 87.39559125900269, {false 1.0000000000001534}
+45, 2.0, 94.2537477016449, {false 1.0000000000001534}
+45, 2.0, 79.08517694473267, {false 1.0000000000001534}
+45, 2.0, 78.93199276924133, {false 1.0000000000001534}
+45, 2.0, 91.89647626876831, {false 1.0000000000001534}
+45, 2.0, 73.7848629951477, {false 1.0000000000001534}
+45, 2.0, 92.80205845832825, {false 1.0000000000001534}
+45, 2.0, 72.14932131767273, {false 1.0000000000001534}
+45, 2.0, 74.75064492225647, {false 1.0000000000001534}
+45, 2.5, 32.242899656295776, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-5751354956060801194.edn
+45, 2.5, 43.146217823028564, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-1174909816490763194.edn
+45, 2.5, 29.29173517227173, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-4506196537686421876.edn
+45, 2.5, 35.25892734527588, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-7581077263915720321.edn
+45, 2.5, 29.093328714370728, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-9101517191938480408.edn
+45, 2.5, 31.44884157180786, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-3319262730369651623.edn
+45, 2.5, 31.711414337158203, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-4701796012636913044.edn
+45, 2.5, 36.69170260429382, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-1066020285919284527.edn
+45, 2.5, 34.00543236732483, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-7213145629801590230.edn
+45, 2.5, 32.84531283378601, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-6397403736783761809.edn
+45, 3.0, 29.650588750839233, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-5527065483663457115.edn
+45, 3.0, 27.86288094520569, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-8912759972951733007.edn
+45, 3.0, 32.5909903049469, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-3003219430872532324.edn
+45, 3.0, 28.690815687179565, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-13287983091186498.edn
+45, 3.0, 40.83314371109009, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-1754994751084228446.edn
+45, 3.0, 28.471961736679077, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-5153179598175866297.edn
+45, 3.0, 28.60068368911743, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-542802446707117774.edn
+45, 3.0, 31.767120122909546, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-8757400789681073242.edn
+45, 3.0, 29.959401607513428, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-981238789183086567.edn
+45, 3.0, 28.63308620452881, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-3749070936472303237.edn
+45, 3.5, 28.691020727157593, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-4395771352094353043.edn
+45, 3.5, 28.547171115875244, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-1562476291777769474.edn
+45, 3.5, 28.574281454086304, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-8579351680862052757.edn
+45, 3.5, 28.494073152542114, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-1048402405404570573.edn
+45, 3.5, 28.696513414382935, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-2280902169426993124.edn
+45, 3.5, 33.222230434417725, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-1752728693705652830.edn
+45, 3.5, 28.612627029418945, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-8975765793437445929.edn
+45, 3.5, 32.63872051239014, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-2193692286395345855.edn
+45, 3.5, 28.66228938102722, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-3615844765319451161.edn
+45, 3.5, 32.53040051460266, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-7878590401834822118.edn
+45, 4.0, 32.43031907081604, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-4490224005796783767.edn
+45, 4.0, 32.26959466934204, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-281481396446675281.edn
+45, 4.0, 28.770411252975464, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-8224252189685740168.edn
+45, 4.0, 28.67290949821472, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-2533526125707026034.edn
+45, 4.0, 28.663738250732422, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-1946507517219465711.edn
+45, 4.0, 28.59675669670105, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-7496265014441885290.edn
+45, 4.0, 28.523317575454712, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-8750224109285576398.edn
+45, 4.0, 28.486783504486084, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-4804445276651827694.edn
+45, 4.0, 31.006574869155884, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-1329733241134176867.edn
+45, 4.0, 28.645302772521973, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-5306488066729444395.edn
+45, 4.5, 28.76312017440796, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-9070723116511689059.edn
+45, 4.5, 28.74875044822693, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-3961770126636703016.edn
+45, 4.5, 28.6137752532959, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-4753832819850552588.edn
+45, 4.5, 28.506102323532104, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-8815729599593351197.edn
+45, 4.5, 28.453617334365845, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-8057746393571066546.edn
+45, 4.5, 28.654162406921387, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-2648098988687188224.edn
+45, 4.5, 28.79427194595337, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-8609583301805547676.edn
+45, 4.5, 28.63181710243225, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-4913811921432266321.edn
+45, 4.5, 28.58143925666809, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-2533890207855230653.edn
+45, 4.5, 28.74122381210327, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-5669712102354381028.edn
+45, 5.0, 36.063754081726074, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-2561894302828750911.edn
+45, 5.0, 39.163471937179565, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-4400271872004473853.edn
+45, 5.0, 55.8176827430725, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-4585878719522603937.edn
+45, 5.0, 28.849404096603394, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-3517777773039411066.edn
+45, 5.0, 40.95445370674133, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-2555936321636090103.edn
+45, 5.0, 76.52034497261047, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-356442179533430861.edn
+45, 5.0, 40.217421531677246, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-356442179533430861.edn
+45, 5.0, 33.780210971832275, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-4496697267683146524.edn
+45, 5.0, 40.66373682022095, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-3531468877009196922.edn
+45, 5.0, 41.30009984970093, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-5448516628626470769.edn
+45, 6.0, 35.48030352592468, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-1434058850780454744.edn
+45, 6.0, 36.27441620826721, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-1342205530169316276.edn
+45, 6.0, 28.807308197021484, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-3640641041289132179.edn
+45, 6.0, 39.81981182098389, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-3347760969349817336.edn
+45, 6.0, 31.876025199890137, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-8147983558565181598.edn
+45, 6.0, 37.64020299911499, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-8319316194227697537.edn
+45, 6.0, 40.23055386543274, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-4965604173896446150.edn
+45, 6.0, 38.216855836543274, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-6577604173596432140.edn
+
+45, 6.0, 31.216855836543274, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-6577604173596432140.edn
+45, 6.0, 34.785565872214485, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-65876029643254755.edn
+
+45, 6.5, 42.03217816352844, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-6388776751141818777.edn
+45, 6.5, 43.78240704536438, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-8048347095625610981.edn
+45, 6.5, 53.06212019920349, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-0452808252970378247.edn
+45, 6.5, 29.831931619422769, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-148900070953214369.edn
+45, 6.5, 43.78240704536438, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-8048347095625610981.edn
+45, 6.5, 33.06212019920349, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-9156911964042999709.edn
+45, 6.5, 46.06212019920349, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-831931619422769788.edn
+45, 6.5, 37.06212019920349, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-9156911964042999709.edn
+45, 6.5, 40.06212019920349, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-9156911964042999709.edn
+
+
+45, 7.0, 48.12462544441223, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-3706978942781912062.edn
+45, 7.0, 39.28082529761, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-4348245388335157664.edn
+45, 7.0, 44.78952989242554, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-734668731689412.edn
+45, 7.0, 46.78952989242554, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-73466873168949712.edn
+45, 7.0, 46.78952989242554, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-1615852972718329712.edn
+45, 7.0, 39.78952989242554, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-1602808252970378.edn
+45, 7.0, 37.78952989242554, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-1615852972718329712.edn
+45, 7.0, 57.78952989242554, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-1006326675415712.edn
+45, 7.0, 28.78952989242554, Syntax error (StackOverflowError) compiling at (anglsat/core.clj:30:1).
+null
+
+Full report at:
+/tmp/clojure-186693277359008612.edn
